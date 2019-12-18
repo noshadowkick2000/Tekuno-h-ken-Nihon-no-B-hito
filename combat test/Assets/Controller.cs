@@ -5,11 +5,20 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     private Animator _charAnimator;
+    private Rigidbody _rigidbody;
+    private const float MoveMult = .01f;
+
+    private Vector3 _moveLeft;
+    private Vector3 _moveRight;
     
     // Start is called before the first frame update
     void Start()
     {
         _charAnimator = GetComponent<Animator>();
+        _rigidbody = GetComponent<Rigidbody>();
+        
+        _moveLeft = Vector3.ClampMagnitude(Vector3.left, MoveMult);
+        _moveRight = Vector3.ClampMagnitude(Vector3.right, MoveMult);
     }
 
     // Update is called once per frame
@@ -37,6 +46,26 @@ public class Controller : MonoBehaviour
         {
             ResetAllTriggers();
             _charAnimator.SetTrigger("front");
+        }
+        
+        if (Input.GetKey(KeyCode.W))
+        {
+            
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            _rigidbody.MovePosition(transform.position + _moveLeft);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            _rigidbody.MovePosition(transform.position + _moveRight);
         }
     }
 
