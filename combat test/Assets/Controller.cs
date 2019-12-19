@@ -69,11 +69,16 @@ public class Controller : MonoBehaviour
         }
     }
 
-    void ResetAllTriggers()
+    private void ResetAllTriggers()
     {
         _charAnimator.ResetTrigger("up");
         _charAnimator.ResetTrigger("down");
         _charAnimator.ResetTrigger("front");
         _charAnimator.ResetTrigger("back");
+    }
+
+    public void PrintState(int state)
+    {
+        print(state.ToString());
     }
 }
