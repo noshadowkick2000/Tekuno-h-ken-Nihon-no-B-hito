@@ -14,8 +14,8 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _charAnimator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody>();
+        _charAnimator = GetComponentInChildren<Animator>();
+        _rigidbody = GetComponentInChildren<Rigidbody>();
         
         _moveLeft = Vector3.ClampMagnitude(Vector3.left, MoveMult);
         _moveRight = Vector3.ClampMagnitude(Vector3.right, MoveMult);

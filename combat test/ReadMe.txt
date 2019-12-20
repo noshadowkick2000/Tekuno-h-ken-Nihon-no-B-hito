@@ -11,3 +11,9 @@ write the state machine code
 Enemy:
 check current architecture with mr C
 code (see also state machine stuff from player)
+
+Note on Colliders:
+2d and 3d colliders do not interact with each other, however colliders which follow the edges of sprites are only in 2d
+2d colliders also dont work with 3d terrain
+current solution is to use 3d colliders for movement and terrain, while 2d collisions are used for combat hitboxes
+as objects cannot have multiple colliders, seperate weapon from character in sprite and give them seperate hitboxes
