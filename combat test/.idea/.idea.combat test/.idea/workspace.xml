@@ -12,6 +12,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/StateDenoter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -20,7 +21,9 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/statelable.cs" />
         <option value="$PROJECT_DIR$/Assets/StateDenoter.cs" />
+        <option value="$PROJECT_DIR$/Assets/ColliderAdder.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/ShadowCaster.cs" />
       </list>
     </option>
   </component>
@@ -74,6 +77,9 @@
       <workItem from="1576685501031" duration="1799000" />
       <workItem from="1576797838976" duration="1139000" />
       <workItem from="1576877500470" duration="50000" />
+      <workItem from="1576889653759" duration="440000" />
+      <workItem from="1576890333243" duration="948000" />
+      <workItem from="1576895821379" duration="19000" />
     </task>
     <servers />
   </component>

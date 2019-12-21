@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Controller : MonoBehaviour
 {
     private Animator _charAnimator;
     private Rigidbody _rigidbody;
+    private Renderer[] _renderer;
     private const float MoveMult = .01f;
 
     private Vector3 _moveLeft;
@@ -16,7 +18,8 @@ public class Controller : MonoBehaviour
     {
         _charAnimator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponentInChildren<Rigidbody>();
-        
+        _renderer = GetComponentsInChildren<Renderer>();
+
         _moveLeft = Vector3.ClampMagnitude(Vector3.left, MoveMult);
         _moveRight = Vector3.ClampMagnitude(Vector3.right, MoveMult);
     }
