@@ -12,7 +12,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/StateDenoter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -80,6 +80,7 @@
       <workItem from="1576889653759" duration="440000" />
       <workItem from="1576890333243" duration="948000" />
       <workItem from="1576895821379" duration="19000" />
+      <workItem from="1576938532390" duration="1400000" />
     </task>
     <servers />
   </component>
