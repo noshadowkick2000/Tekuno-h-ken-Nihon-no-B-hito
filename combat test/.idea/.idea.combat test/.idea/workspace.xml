@@ -13,17 +13,29 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/StateDenoter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplayReceiver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/StateDenoter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplaySender.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/statelable.cs" />
-        <option value="$PROJECT_DIR$/Assets/StateDenoter.cs" />
         <option value="$PROJECT_DIR$/Assets/ColliderAdder.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/ShadowCaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/StateDenoter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/PlayerInputHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/StateDenoter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplayReceiver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplaySender.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/Player.cs" />
       </list>
     </option>
   </component>
@@ -81,6 +93,8 @@
       <workItem from="1576890333243" duration="948000" />
       <workItem from="1576895821379" duration="19000" />
       <workItem from="1576938532390" duration="1400000" />
+      <workItem from="1577111755204" duration="5812000" />
+      <workItem from="1577127781554" duration="3777000" />
     </task>
     <servers />
   </component>

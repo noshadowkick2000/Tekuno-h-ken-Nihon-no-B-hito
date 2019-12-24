@@ -4,16 +4,15 @@ using UnityEngine.Rendering;
 
 [ExecuteInEditMode]
 
-public class ShadowCaster : MonoBehaviour {
+public class ShadowCaster : MonoBehaviour
+{
 
+	[SerializeField] private bool use3DLighting;
+	
 	// Use this for initialization
 	void Start () {
-		GetComponent<Renderer>().shadowCastingMode = ShadowCastingMode.On;
-		GetComponent<Renderer>().receiveShadows = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		if (use3DLighting) 
+			GetComponent<Renderer>().shadowCastingMode = ShadowCastingMode.On;
+		GetComponent<Renderer>().receiveShadows = use3DLighting;
 	}
 }
