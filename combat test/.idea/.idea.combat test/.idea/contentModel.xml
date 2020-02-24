@@ -11,16 +11,25 @@
           <e p="ShadowCaster.cs" t="Include" />
           <e p="SpriteShader.shader" t="Include" />
         </e>
+        <e p="README.txt" t="Include" />
         <e p="Scripts" t="Include">
           <e p="LevelArch" t="Include">
+            <e p="Constants.cs" t="Include" />
+            <e p="EnemyMove.cs" t="Include" />
+            <e p="Health.cs" t="Include" />
+            <e p="InputAttack.cs" t="Include" />
+            <e p="InputDefense.cs" t="Include" />
+            <e p="InputMove.cs" t="Include" />
             <e p="Player" t="Include">
-              <e p="DebugDisplayReceiver.cs" t="Include" />
-              <e p="DebugDisplaySender.cs" t="Include" />
               <e p="Player.cs" t="Include" />
-              <e p="StateDenoter.cs" t="Include" />
             </e>
+            <e p="TimingMachine.cs" t="Include" />
+            <e p="TimingMachineEnemy.cs" t="Include" />
+            <e p="TimingState.cs" t="Include" />
+            <e p="TriggerScript.cs" t="Include" />
           </e>
         </e>
+        <e p="SpriteShader.shader" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
