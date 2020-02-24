@@ -61,13 +61,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/README.txt" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" />
       </list>
     </option>
@@ -148,6 +149,7 @@
       <workItem from="1582474818387" duration="1787000" />
       <workItem from="1582486415813" duration="5470000" />
       <workItem from="1582504147787" duration="1652000" />
+      <workItem from="1582581938458" duration="4899000" />
     </task>
     <servers />
   </component>

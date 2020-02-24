@@ -19,6 +19,8 @@ public class TimingMachineEnemy : MonoBehaviour
     [SerializeField] private TimingState missTimeStates;
     private Constants.Stances _curStance = Constants.Stances.Forward;
 
+    [SerializeField] public float enemyDamageReach;
+
     private TimingState _currentState;
     private float _exitTimeCounter;
 

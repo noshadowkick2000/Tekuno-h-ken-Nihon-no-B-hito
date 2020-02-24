@@ -1,2 +1,3 @@
-derived_states are states which have set states which they can transition into
-non_derived_states are states which can be transitioned into from any state
+atm TimingMachineEnemy still uses TimingStates, tho many attributes are obsolete for enemy script, can change later
+also some attributes from TimingStates itself could be obsolete
+

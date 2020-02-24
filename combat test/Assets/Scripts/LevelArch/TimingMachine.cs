@@ -35,6 +35,8 @@ public class TimingMachine : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private int nonArmed;
+    
     private Health _health;
     
     // Start is called before the first frame update
@@ -70,6 +72,7 @@ public class TimingMachine : MonoBehaviour
 
     private void SetFree()
     {
+        animator.SetInteger("curState", nonArmed);
         swordDrawn = false;
         inputMove.running = true; 
         inputMove.drawn = swordDrawn;

@@ -23,6 +23,17 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private int[] engagedHealthBehaviourChangeTreshold;
     [SerializeField] private Constants.MoveBehaviour[] otherEngagedMoveBehaviour;
 
+    [SerializeField] private Transform[] patrolPoints;
+    //need to copy transforms if patrolPoints are children of enemy object, otherwise the positions will move with the enemy object
+    private Vector3[] _pPs;
+    //not implemented yet, use later when making patrolling do more
+    [SerializeField] private float patrolWaitTime;
+
+    [SerializeField] private float normalSpeed;
+    [SerializeField] private float engagedSpeed;
+    
+    private int _patrolPointCounter;
+
     private int _otherEngagedBehaviourCounter = 0;
     private bool _behaviourChangable = false;
     
@@ -33,6 +44,13 @@ public class EnemyMove : MonoBehaviour
         _health = GetComponent<Health>();
         _timingMachineEnemy = GetComponent<TimingMachineEnemy>();
         _player = FindObjectOfType<TimingMachine>();
+
+        _pPs = new Vector3[patrolPoints.Length];
+
+        for (int i = 0; i < _pPs.Length; i++)
+        {
+            _pPs[i] = patrolPoints[i].position;
+        }
 
         if (engagedHealthBehaviourChangeTreshold.Length > 0)
         {
@@ -77,7 +95,6 @@ public class EnemyMove : MonoBehaviour
         else if (_engaged)
         {
             MoveEnemyWithBehaviour(engagedMoveBehaviour);
-            _timingMachineEnemy.SetDirection(IsPlayerRight());
         }
         else
         {
@@ -90,11 +107,38 @@ public class EnemyMove : MonoBehaviour
         return _player.transform.position.x > transform.position.x;
     }
 
+    private bool IsMovementToRight(Vector3 origin, Vector3 goal)
+    {
+        return (origin.x < goal.x);
+    }
+
     private void MoveEnemyWithBehaviour(Constants.MoveBehaviour curBehaviour)
     {
+        float curSpeed = _engaged ? engagedSpeed : normalSpeed;
+
         switch (curBehaviour)
         {
-            
+            case Constants.MoveBehaviour.Patrol:
+                if (Vector3.Distance(transform.position, _pPs[_patrolPointCounter]) < .1f)
+                {
+                    _patrolPointCounter++;
+                    if (_patrolPointCounter == _pPs.Length)
+                        _patrolPointCounter = 0;
+                }
+                else
+                {
+                    _timingMachineEnemy.SetDirection(IsMovementToRight(transform.position, _pPs[_patrolPointCounter]));
+                    _rigidbody.MovePosition(Vector3.MoveTowards(transform.position, _pPs[_patrolPointCounter], curSpeed));
+                }
+                break;
+            case Constants.MoveBehaviour.Chase:
+                if (Vector3.Distance(transform.position, _player.transform.position) > _timingMachineEnemy.enemyDamageReach)
+                    _rigidbody.MovePosition(Vector3.MoveTowards(transform.position, _player.transform.position, curSpeed));
+                _timingMachineEnemy.SetDirection(IsPlayerRight());
+                break;
+            case Constants.MoveBehaviour.Stationary:
+                _timingMachineEnemy.SetDirection(IsPlayerRight());
+                break;
         }
     }
 }
