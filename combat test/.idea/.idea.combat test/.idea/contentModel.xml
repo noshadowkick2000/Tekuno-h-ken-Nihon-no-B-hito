@@ -15,6 +15,8 @@
         <e p="Scripts" t="Include">
           <e p="LevelArch" t="Include">
             <e p="Constants.cs" t="Include" />
+            <e p="EnemyAttacking.cs" t="Include" />
+            <e p="EnemyCyclesHolder.cs" t="Include" />
             <e p="EnemyMove.cs" t="Include" />
             <e p="Health.cs" t="Include" />
             <e p="InputAttack.cs" t="Include" />

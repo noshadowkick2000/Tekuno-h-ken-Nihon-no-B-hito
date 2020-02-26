@@ -36,13 +36,10 @@ public class TimingMachine : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [SerializeField] private int nonArmed;
-    
-    private Health _health;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        _health = GetComponent<Health>();
         SetFree();
     }
 
@@ -50,11 +47,13 @@ public class TimingMachine : MonoBehaviour
     public void SetCurrentStance(Constants.Stances defensiveStance)
     {
         _curStance = defensiveStance;
+        SetCurrentState(idleStates[(int)_curStance]);
     }
 
     //set current state and which modules are called in update
     private void SetCurrentState(TimingState newState)
     {
+        //print(newState.name);
         swordDrawn = true;
         _currentState = newState;
         animator.SetInteger("curState", _currentState.animatorID); 
@@ -63,6 +62,7 @@ public class TimingMachine : MonoBehaviour
         inputMove.autoMove = _currentState.autoMove * masterMoveSpeed;
         inputDefense.running = _currentState.canDefend; 
         inputAttack.running = _currentState.canAttack;
+        inputAttack._stateDamage = _currentState.baseAttackDamage;
 
         if (_currentState.exitTime != 0f)
         {
@@ -117,16 +117,19 @@ public class TimingMachine : MonoBehaviour
 
     public void ParrySuccess()
     {
+        inputAttack.Attack();
         SetCurrentState(parryStates[(int)_curStance]);
     }
 
     public void FailAction()
     {
+        attackPrimed = false;
         SetCurrentState(missTimeStates);
     }
 
     public void Hurt()
     {
+        attackPrimed = false;
         SetCurrentState(hurtStates);
     }
 

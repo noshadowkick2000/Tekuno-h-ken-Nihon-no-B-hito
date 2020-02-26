@@ -30,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyCyclesHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Health.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -59,17 +61,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplaySender.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplayReceiver.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Health.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/README.txt" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyCyclesHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
       </list>
     </option>
   </component>
@@ -102,10 +106,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="15108">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="21804">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15108" />
+      <option name="pid" value="21804" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -150,6 +154,15 @@
       <workItem from="1582486415813" duration="5470000" />
       <workItem from="1582504147787" duration="1652000" />
       <workItem from="1582581938458" duration="4899000" />
+      <workItem from="1582630149876" duration="924000" />
+      <workItem from="1582638092673" duration="7475000" />
+      <workItem from="1582647639236" duration="407000" />
+      <workItem from="1582658081818" duration="2296000" />
+      <workItem from="1582705732810" duration="10438000" />
+      <workItem from="1582719534163" duration="2474000" />
+      <workItem from="1582722524114" duration="1422000" />
+      <workItem from="1582724863926" duration="453000" />
+      <workItem from="1582725977615" duration="3404000" />
     </task>
     <servers />
   </component>

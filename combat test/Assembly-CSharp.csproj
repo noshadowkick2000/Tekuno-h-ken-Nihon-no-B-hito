@@ -60,6 +60,8 @@
   <ItemGroup>
      <Compile Include="Assets\Materials\ShadowCaster.cs" />
      <Compile Include="Assets\Scripts\LevelArch\Constants.cs" />
+     <Compile Include="Assets\Scripts\LevelArch\EnemyAttacking.cs" />
+     <Compile Include="Assets\Scripts\LevelArch\EnemyCyclesHolder.cs" />
      <Compile Include="Assets\Scripts\LevelArch\EnemyMove.cs" />
      <Compile Include="Assets\Scripts\LevelArch\Health.cs" />
      <Compile Include="Assets\Scripts\LevelArch\InputAttack.cs" />

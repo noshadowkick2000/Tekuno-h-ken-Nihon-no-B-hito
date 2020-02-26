@@ -8,87 +8,109 @@ public class InputDefense : MonoBehaviour
     public bool running;
 
     private TimingMachine _timingMachine;
+    private Health _health;
 
     private float _startTimeBlock;
     private float _endTimeDefense;
 
     private bool _defending = false;
+    private Constants.Stances _defensiveStance = Constants.Stances.Free;
+    private int _damage;
+    private EnemyAttacking _enemy;
 
     private void Awake()
     {
         _timingMachine = GetComponent<TimingMachine>();
+        _health = GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (running)
+        if (Time.time >= _endTimeDefense)
+            CheckDefenseOver();
+        if (running && _defending)
         {
-            if (Input.GetKey(KeyCode.LeftControl))
-            {
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        
-                    }
+            CheckDefense();
+        }
+    }
 
-                    else if (Input.GetKey(KeyCode.A))
-                    {
-                    
-                    }
-                
-                    else if (Input.GetKey(KeyCode.S))
-                    {
-                    
-                    }
-                
-                    else if (Input.GetKey(KeyCode.D))
-                    {
-                    
-                    }
-                }
+    private void CheckDefense()
+    {
+        Constants.Stances inputStance = Constants.Stances.Null;
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                inputStance = Constants.Stances.Up;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                inputStance = _timingMachine.facingRight ? Constants.Stances.Backward : Constants.Stances.Forward;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                inputStance = Constants.Stances.Down;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                inputStance = _timingMachine.facingRight ? Constants.Stances.Forward : Constants.Stances.Backward;
             }
         }
 
-        CheckDefenseOver();
-    }
-
-    private void CheckDefense(Constants.Stances requiredPlayerStance)
-    {
-        if (_defending)
+        if (inputStance == _defensiveStance)
         {
             if (Time.time < _startTimeBlock)
             {
                 //parry
+                print("parry");
+                _timingMachine.ParrySuccess();
+                //_enemy.StopAttackCycle();
             }
             else if (Time.time < _endTimeDefense)
             {
                 //block
+                print("block");
+                _timingMachine.BlockSuccess();
+                //_enemy.StopAttackCycle();
             }
+            StopDefenseTimer();
         }
-        else
+        else if (inputStance != Constants.Stances.Null)
         {
+            print("oof");
             _timingMachine.FailAction();
         }
     }
 
-    public void StartDefenseTimer(float startParry, float endTime, Constants.Stances enemyStances)
+    public void StartDefenseTimer(float startBlock, float endTime, Constants.Stances enemyStances, int damage, EnemyAttacking enemy)
     {
+        CheckDefenseOver();
+        //print("start");
         _defending = true;
-        _startTimeBlock = startParry;
-        _endTimeDefense = endTime;
+        _startTimeBlock = Time.time + startBlock;
+        _endTimeDefense = Time.time + endTime;
+        _defensiveStance = enemyStances;
+        _timingMachine.SetCurrentStance(enemyStances);
+        _damage = damage;
+        _enemy = enemy;
     }
 
-    public void StopDefenseTimer()
+    private void StopDefenseTimer()
     {
+        //print("stopped");
         _defending = false;
+        _defensiveStance = Constants.Stances.Free;
+        _damage = 0;
     }
 
     private void CheckDefenseOver()
     {
-        if (Time.time > _endTimeDefense)
+        if (_defending)
         {
+            _health.Damage(_damage);
+            _timingMachine.Hurt();
             StopDefenseTimer();
         }
     }

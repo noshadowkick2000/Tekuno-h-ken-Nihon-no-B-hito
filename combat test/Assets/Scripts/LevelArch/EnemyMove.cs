@@ -5,16 +5,18 @@ using UnityEngine.iOS;
 
 public class EnemyMove : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
+    private Rigidbody _rigidBody;
     private BoxCollider _boxCollider;
     private Health _health;
     private TimingMachineEnemy _timingMachineEnemy;
+    private EnemyAttacking _enemyAttacking;
     private TimingMachine _player;
 
     [SerializeField] private TriggerScript leftCollider;
     [SerializeField] private TriggerScript rightCollider;
 
     private bool _engaged = false;
+    public float autoMove = 0;
 
     [SerializeField] private Constants.MoveBehaviour freeMoveBehaviour;
     [SerializeField] private Constants.MoveBehaviour engagedMoveBehaviour;
@@ -31,7 +33,7 @@ public class EnemyMove : MonoBehaviour
 
     [SerializeField] private float normalSpeed;
     [SerializeField] private float engagedSpeed;
-    
+
     private int _patrolPointCounter;
 
     private int _otherEngagedBehaviourCounter = 0;
@@ -40,9 +42,10 @@ public class EnemyMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        _rigidBody = GetComponent<Rigidbody>();
         _health = GetComponent<Health>();
         _timingMachineEnemy = GetComponent<TimingMachineEnemy>();
+        _enemyAttacking = GetComponent<EnemyAttacking>();
         _player = FindObjectOfType<TimingMachine>();
 
         _pPs = new Vector3[patrolPoints.Length];
@@ -62,7 +65,21 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
         CheckEnemyInRange();
-        MoveEnemy();
+        if (!_enemyAttacking.attacking)
+        {
+            CheckEnemyInAttackRange();
+            MoveEnemy();
+        }
+        else
+            AutoMove(_timingMachineEnemy.facingRight);
+    }
+
+    private void CheckEnemyInAttackRange()
+    {
+        if (Vector3.Distance(_player.transform.position, transform.position) < _timingMachineEnemy.enemyDamageReach)
+        {
+            _enemyAttacking.StartAttackCycle();
+        }
     }
     
     //this shit is copy pasted from inputmove
@@ -76,6 +93,8 @@ public class EnemyMove : MonoBehaviour
         else
         {
             _engaged = false;
+            if (_enemyAttacking.attacking)
+                _enemyAttacking.StopAttackCycle();
         }
     }
 
@@ -128,17 +147,26 @@ public class EnemyMove : MonoBehaviour
                 else
                 {
                     _timingMachineEnemy.SetDirection(IsMovementToRight(transform.position, _pPs[_patrolPointCounter]));
-                    _rigidbody.MovePosition(Vector3.MoveTowards(transform.position, _pPs[_patrolPointCounter], curSpeed));
+                    _rigidBody.MovePosition(Vector3.MoveTowards(transform.position, _pPs[_patrolPointCounter], curSpeed));
                 }
                 break;
             case Constants.MoveBehaviour.Chase:
                 if (Vector3.Distance(transform.position, _player.transform.position) > _timingMachineEnemy.enemyDamageReach)
-                    _rigidbody.MovePosition(Vector3.MoveTowards(transform.position, _player.transform.position, curSpeed));
+                    _rigidBody.MovePosition(Vector3.MoveTowards(transform.position, _player.transform.position, curSpeed));
                 _timingMachineEnemy.SetDirection(IsPlayerRight());
                 break;
             case Constants.MoveBehaviour.Stationary:
                 _timingMachineEnemy.SetDirection(IsPlayerRight());
                 break;
         }
+    }
+    
+    private void AutoMove(bool facingRight)
+    {
+        float x = autoMove * .004f;
+        if (!facingRight)
+            x *= -1;
+        Vector3 newGroundPos = new Vector3(x, 0, 0);
+        _rigidBody.MovePosition(_rigidBody.position + newGroundPos);
     }
 }

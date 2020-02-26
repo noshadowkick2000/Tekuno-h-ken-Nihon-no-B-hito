@@ -13,6 +13,7 @@ public class InputAttack : MonoBehaviour
     [SerializeField] private float swordReach;
 
     [SerializeField] private int swordDamage;
+    public int _stateDamage;
 
     private TimingMachine _timingMachine;
 
@@ -49,12 +50,16 @@ public class InputAttack : MonoBehaviour
         {
             if (Vector3.Distance(enemy.transform.position, transform.position) < swordReach)
             {
-                enemy.Wound(swordDamage);
+                print("check");
+                if (enemy.Wound(swordDamage*_stateDamage))
+                    _timingMachine.AttackSuccess();
+                else
+                    _timingMachine.FailAction();
+            }
+            else
+            {
+                _timingMachine.AttackSuccess();
             }
         }
-        //enemy function returns whether attack was successful or not if so, then
-        _timingMachine.AttackSuccess();
-        //else
-        //_timingMachine.FailAction();
     }
 }

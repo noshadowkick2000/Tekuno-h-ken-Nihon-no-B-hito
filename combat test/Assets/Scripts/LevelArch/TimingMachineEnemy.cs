@@ -17,7 +17,7 @@ public class TimingMachineEnemy : MonoBehaviour
     [SerializeField] private TimingState[] parryStates;
     [SerializeField] private TimingState hurtStates;
     [SerializeField] private TimingState missTimeStates;
-    private Constants.Stances _curStance = Constants.Stances.Forward;
+    [SerializeField] private Constants.Stances _curStance;
 
     [SerializeField] public float enemyDamageReach;
 
@@ -29,7 +29,10 @@ public class TimingMachineEnemy : MonoBehaviour
     //private enemies arraylist etc
 
     [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer; 
+    private EnemyAttacking _enemyAttacking;
+    private EnemyMove _enemyMove;
+    private InputDefense _playerDefense;
 
     private Health _health;
     
@@ -37,11 +40,28 @@ public class TimingMachineEnemy : MonoBehaviour
     void Start()
     {
         _health = GetComponent<Health>();
+        _enemyAttacking = GetComponent<EnemyAttacking>();
+        _enemyMove = GetComponent<EnemyMove>();
+
+        _playerDefense = FindObjectOfType<InputDefense>();
+        
+        SetCurrentStance(Constants.Stances.Up);
+        SetCurrentState(idleStates[(int)_curStance]);
     }
 
-    public void Wound(int damage)
+    public bool Wound(int damage)
     {
+        //this is fucked
+        if (_currentState.canDefend)
+        {
+            FailAction();
+            return false;
+        }
         _health.Damage(damage);
+        Hurt(); 
+        if (_health.curHealth <= 0) 
+            GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.down * 3);
+        return true;
     }
 
     //when enemy changes stance etc
@@ -51,25 +71,39 @@ public class TimingMachineEnemy : MonoBehaviour
     }
 
     //set current state and which modules are called in update
-    private void SetCurrentState(TimingState newState)
+    public void SetCurrentState(TimingState newState)
     {
         swordDrawn = true;
         _currentState = newState;
+        _enemyMove.autoMove = _currentState.autoMove;
         animator.SetInteger("curState", _currentState.animatorID);
+        
+        SetCurrentStance(newState.curStance);
 
         if (_currentState.exitTime != 0f)
         {
             _exitTimeCounter = Time.time + _currentState.exitTime / masterTimeSpeed;
         }
+        
+        //for blocking and parrying
+        if (_currentState.canAttack)
+        {
+            _playerDefense.StartDefenseTimer(_currentState.exitTime / masterTimeSpeed * .4f, _currentState.exitTime / masterTimeSpeed, _curStance,
+                _currentState.baseAttackDamage, _enemyAttacking);
+        }
     }
 
     void Update()
     {
+        if (_health.curHealth <= 0)
+            Destroy(gameObject);
+        
         if (swordDrawn)
         {
             if (_exitTimeCounter <= Time.time)
             {
-                SetCurrentState(idleStates[(int)_curStance]); //change curstance when exittime over
+                if (_enemyAttacking.attacking)
+                    SetCurrentState(_enemyAttacking.GetNextState());
             }
             //print(_currentState.transform.name);
         }
@@ -92,6 +126,7 @@ public class TimingMachineEnemy : MonoBehaviour
 
     public void FailAction()
     {
+        _enemyAttacking.StopAttackCycle();
         SetCurrentState(missTimeStates);
     }
 

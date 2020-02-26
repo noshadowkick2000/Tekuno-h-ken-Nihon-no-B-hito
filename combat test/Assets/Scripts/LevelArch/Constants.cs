@@ -10,7 +10,8 @@ public class Constants : MonoBehaviour
         Forward = 1,
         Down = 2,
         Backward = 3,
-        Free = 4
+        Free = 4,
+        Null = 5
     }
     
     public enum MoveBehaviour

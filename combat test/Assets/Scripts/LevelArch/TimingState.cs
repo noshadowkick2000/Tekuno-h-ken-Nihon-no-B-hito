@@ -10,6 +10,7 @@ public class TimingState : MonoBehaviour
     [SerializeField] public bool canAttack; //whether attack controls can be queued in this state
     [SerializeField] public TimingState nextAttackState;
     [SerializeField] public bool canDefend; //false if misstimed block/parry
-    [SerializeField] public float baseAttackDamage; //0 if not attacking state
+    [SerializeField] public int baseAttackDamage; //0 if not attacking state
     [SerializeField] public float exitTime; //0 if no auto-exit
+    [SerializeField] public Constants.Stances curStance;
 }
