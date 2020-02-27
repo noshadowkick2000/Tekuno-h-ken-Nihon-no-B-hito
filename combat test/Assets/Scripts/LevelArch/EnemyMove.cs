@@ -11,6 +11,7 @@ public class EnemyMove : MonoBehaviour
     private TimingMachineEnemy _timingMachineEnemy;
     private EnemyAttacking _enemyAttacking;
     private TimingMachine _player;
+    private InputDefense _playerDefense;
 
     [SerializeField] private TriggerScript leftCollider;
     [SerializeField] private TriggerScript rightCollider;
@@ -47,6 +48,7 @@ public class EnemyMove : MonoBehaviour
         _timingMachineEnemy = GetComponent<TimingMachineEnemy>();
         _enemyAttacking = GetComponent<EnemyAttacking>();
         _player = FindObjectOfType<TimingMachine>();
+        _playerDefense = FindObjectOfType<InputDefense>();
 
         _pPs = new Vector3[patrolPoints.Length];
 
@@ -80,6 +82,10 @@ public class EnemyMove : MonoBehaviour
         {
             _enemyAttacking.StartAttackCycle();
         }
+        else
+        {
+            _enemyAttacking.StopAttackCycle();
+        }
     }
     
     //this shit is copy pasted from inputmove
@@ -93,6 +99,7 @@ public class EnemyMove : MonoBehaviour
         else
         {
             _engaged = false;
+            _playerDefense.StopDefenseTimer();
             if (_enemyAttacking.attacking)
                 _enemyAttacking.StopAttackCycle();
         }

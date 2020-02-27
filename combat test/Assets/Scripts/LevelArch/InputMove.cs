@@ -148,7 +148,7 @@ public class InputMove : MonoBehaviour
             }
             else
             {
-                closestEnemy = closestRightEnemy;
+                closestEnemy = closestLeftEnemy;
                 _timingMachine.SetDirection(false);
             }
         }

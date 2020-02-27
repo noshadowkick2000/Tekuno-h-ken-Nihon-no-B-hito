@@ -65,14 +65,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/README.txt" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyCyclesHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
       </list>
     </option>
@@ -163,6 +163,7 @@
       <workItem from="1582722524114" duration="1422000" />
       <workItem from="1582724863926" duration="453000" />
       <workItem from="1582725977615" duration="3404000" />
+      <workItem from="1582825806014" duration="2113000" />
     </task>
     <servers />
   </component>

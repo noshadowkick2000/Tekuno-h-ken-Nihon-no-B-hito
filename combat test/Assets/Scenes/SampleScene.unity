@@ -3514,6 +3514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   running: 0
+  _defending: 0
 --- !u!114 &2001564245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3871,7 +3872,7 @@ MonoBehaviour:
   animatorID: 5
   canMove: 1
   autoMove: 0
-  canAttack: 1
+  canAttack: 0
   nextAttackState: {fileID: 415847074}
   canDefend: 0
   baseAttackDamage: 0

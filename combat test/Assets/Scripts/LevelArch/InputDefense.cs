@@ -13,7 +13,7 @@ public class InputDefense : MonoBehaviour
     private float _startTimeBlock;
     private float _endTimeDefense;
 
-    private bool _defending = false;
+    public bool _defending = false;
     private Constants.Stances _defensiveStance = Constants.Stances.Free;
     private int _damage;
     private EnemyAttacking _enemy;
@@ -29,7 +29,7 @@ public class InputDefense : MonoBehaviour
     {
         if (Time.time >= _endTimeDefense)
             CheckDefenseOver();
-        if (running && _defending)
+        if (running)
         {
             CheckDefense();
         }
@@ -39,7 +39,7 @@ public class InputDefense : MonoBehaviour
     {
         Constants.Stances inputStance = Constants.Stances.Null;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -87,7 +87,7 @@ public class InputDefense : MonoBehaviour
     public void StartDefenseTimer(float startBlock, float endTime, Constants.Stances enemyStances, int damage, EnemyAttacking enemy)
     {
         CheckDefenseOver();
-        //print("start");
+        print("start");
         _defending = true;
         _startTimeBlock = Time.time + startBlock;
         _endTimeDefense = Time.time + endTime;
@@ -97,7 +97,7 @@ public class InputDefense : MonoBehaviour
         _enemy = enemy;
     }
 
-    private void StopDefenseTimer()
+    public void StopDefenseTimer()
     {
         //print("stopped");
         _defending = false;
@@ -109,6 +109,7 @@ public class InputDefense : MonoBehaviour
     {
         if (_defending)
         {
+            //print("fakoff");
             _health.Damage(_damage);
             _timingMachine.Hurt();
             StopDefenseTimer();

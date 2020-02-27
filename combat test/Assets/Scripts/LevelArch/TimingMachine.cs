@@ -117,8 +117,8 @@ public class TimingMachine : MonoBehaviour
 
     public void ParrySuccess()
     {
-        inputAttack.Attack();
         SetCurrentState(parryStates[(int)_curStance]);
+        inputAttack.Parry();
     }
 
     public void FailAction()

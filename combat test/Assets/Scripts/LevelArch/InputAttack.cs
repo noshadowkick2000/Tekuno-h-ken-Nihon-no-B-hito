@@ -16,10 +16,12 @@ public class InputAttack : MonoBehaviour
     public int _stateDamage;
 
     private TimingMachine _timingMachine;
+    private InputDefense _inputDefense;
 
     private void Awake()
     {
         _timingMachine = GetComponent<TimingMachine>();
+        _inputDefense = GetComponent<InputDefense>();
     }
 
     // Update is called once per frame
@@ -59,6 +61,23 @@ public class InputAttack : MonoBehaviour
             else
             {
                 _timingMachine.AttackSuccess();
+            }
+        }
+    }
+
+    public void Parry()
+    {
+        TimingMachineEnemy[] targetEnemies;
+        //check if enemy available
+        targetEnemies = _timingMachine.facingRight ? rightCollider.GetEnemies() : leftCollider.GetEnemies();
+        //if so then send attack request to enemy
+        foreach (var enemy in targetEnemies)
+        {
+            if (Vector3.Distance(enemy.transform.position, transform.position) < swordReach)
+            {
+                print("check");
+                if (!enemy.Wound(swordDamage*_stateDamage))
+                    _timingMachine.FailAction();
             }
         }
     }

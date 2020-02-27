@@ -58,9 +58,8 @@ public class TimingMachineEnemy : MonoBehaviour
             return false;
         }
         _health.Damage(damage);
-        Hurt(); 
         if (_health.curHealth <= 0) 
-            GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.down * 3);
+            GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.down * 5);
         return true;
     }
 
