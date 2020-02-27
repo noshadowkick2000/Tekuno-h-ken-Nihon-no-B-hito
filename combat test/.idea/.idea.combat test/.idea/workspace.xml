@@ -62,18 +62,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplayReceiver.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Health.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/README.txt" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyCyclesHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" />
       </list>
     </option>
   </component>
@@ -106,10 +106,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="21804">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="13248">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21804" />
+      <option name="pid" value="13248" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -164,6 +164,7 @@
       <workItem from="1582724863926" duration="453000" />
       <workItem from="1582725977615" duration="3404000" />
       <workItem from="1582825806014" duration="2113000" />
+      <workItem from="1582828721163" duration="1469000" />
     </task>
     <servers />
   </component>

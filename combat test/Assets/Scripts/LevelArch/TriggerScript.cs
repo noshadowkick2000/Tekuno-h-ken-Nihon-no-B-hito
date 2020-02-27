@@ -9,11 +9,17 @@ public class TriggerScript : MonoBehaviour
     
     private bool _triggered;
     private List<TimingMachineEnemy> _enemies = new List<TimingMachineEnemy>();
+    private BoxCollider _refCollider;
 
     //used for objects other than enemies
     private int _counter;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
+    {
+        _refCollider = GetComponent<BoxCollider>();
+    }
+
+    /*private void OnTriggerEnter(Collider other)
     {
         switch (detectionType)
         {
@@ -49,16 +55,48 @@ public class TriggerScript : MonoBehaviour
                 }
                 break;
         }
+    }*/
+
+    private TimingMachineEnemy[] OverlapEnemy()
+    {
+        Collider[] hitColliders = Physics.OverlapBox(_refCollider.center, _refCollider.size, Quaternion.identity);
+
+        List<TimingMachineEnemy> enemies = new List<TimingMachineEnemy>();
+        
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].CompareTag("Enemy"))
+            {
+                enemies.Add(hitColliders[i].GetComponent<TimingMachineEnemy>());
+            }
+        }
+
+        return enemies.ToArray();
+    }
+
+    private int OverlapCounter()
+    {
+        Collider[] hitColliders = Physics.OverlapBox(_refCollider.center, _refCollider.size, Quaternion.identity);
+
+        int count = 0;
+        
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].CompareTag("Player"))
+                count++;
+        }
+        
+        return count;
     }
 
     public TimingMachineEnemy[] GetEnemies()
     {
-        return _enemies.ToArray();
+        return OverlapEnemy();
     }
 
     public int GetOther()
     {
-        return _counter;
+        return OverlapCounter();
     }
 
     private void FixedUpdate()
