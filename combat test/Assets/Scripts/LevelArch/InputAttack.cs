@@ -44,7 +44,7 @@ public class InputAttack : MonoBehaviour
 
     public void Attack()
     {
-        TimingMachineEnemy[] targetEnemies;
+        EnemyDefense[] targetEnemies;
         //check if enemy available
         targetEnemies = _timingMachine.facingRight ? rightCollider.GetEnemies() : leftCollider.GetEnemies();
         //if so then send attack request to enemy
@@ -52,7 +52,7 @@ public class InputAttack : MonoBehaviour
         {
             if (Vector3.Distance(enemy.transform.position, transform.position) < swordReach)
             {
-                print("check");
+                //print("check");
                 if (enemy.Wound(swordDamage*_stateDamage))
                     _timingMachine.AttackSuccess();
                 else
@@ -67,7 +67,7 @@ public class InputAttack : MonoBehaviour
 
     public void Parry()
     {
-        TimingMachineEnemy[] targetEnemies;
+        EnemyDefense[] targetEnemies;
         //check if enemy available
         targetEnemies = _timingMachine.facingRight ? rightCollider.GetEnemies() : leftCollider.GetEnemies();
         //if so then send attack request to enemy

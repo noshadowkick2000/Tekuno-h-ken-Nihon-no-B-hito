@@ -57,17 +57,17 @@ public class TriggerScript : MonoBehaviour
         }
     }*/
 
-    private TimingMachineEnemy[] OverlapEnemy()
+    private EnemyDefense[] OverlapEnemy()
     {
-        Collider[] hitColliders = Physics.OverlapBox(_refCollider.center, _refCollider.size, Quaternion.identity);
+        Collider[] hitColliders = Physics.OverlapBox(_refCollider.center + _refCollider.transform.position, _refCollider.size * .5f, Quaternion.identity);
 
-        List<TimingMachineEnemy> enemies = new List<TimingMachineEnemy>();
+        List<EnemyDefense> enemies = new List<EnemyDefense>();
         
         for (int i = 0; i < hitColliders.Length; i++)
         {
             if (hitColliders[i].CompareTag("Enemy"))
             {
-                enemies.Add(hitColliders[i].GetComponent<TimingMachineEnemy>());
+                enemies.Add(hitColliders[i].GetComponent<EnemyDefense>());
             }
         }
 
@@ -89,7 +89,7 @@ public class TriggerScript : MonoBehaviour
         return count;
     }
 
-    public TimingMachineEnemy[] GetEnemies()
+    public EnemyDefense[] GetEnemies()
     {
         return OverlapEnemy();
     }

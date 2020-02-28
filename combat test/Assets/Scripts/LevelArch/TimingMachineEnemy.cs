@@ -21,7 +21,7 @@ public class TimingMachineEnemy : MonoBehaviour
 
     [SerializeField] public float enemyDamageReach;
 
-    private TimingState _currentState;
+    public TimingState _currentState;
     private float _exitTimeCounter;
 
     public bool facingRight = true;
@@ -31,6 +31,7 @@ public class TimingMachineEnemy : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer; 
     private EnemyAttacking _enemyAttacking;
+    private EnemyDefense _enemyDefense;
     private EnemyMove _enemyMove;
     private InputDefense _playerDefense;
 
@@ -41,26 +42,13 @@ public class TimingMachineEnemy : MonoBehaviour
     {
         _health = GetComponent<Health>();
         _enemyAttacking = GetComponent<EnemyAttacking>();
+        _enemyDefense = GetComponent<EnemyDefense>();
         _enemyMove = GetComponent<EnemyMove>();
 
         _playerDefense = FindObjectOfType<InputDefense>();
         
-        SetCurrentStance(Constants.Stances.Up);
+        SetCurrentStance(Constants.Stances.Forward);
         SetCurrentState(idleStates[(int)_curStance]);
-    }
-
-    public bool Wound(int damage)
-    {
-        //this is fucked
-        if (_currentState.canDefend)
-        {
-            FailAction();
-            return false;
-        }
-        _health.Damage(damage);
-        if (_health.curHealth <= 0) 
-            GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.down * 5);
-        return true;
     }
 
     //when enemy changes stance etc
@@ -87,7 +75,7 @@ public class TimingMachineEnemy : MonoBehaviour
         //for blocking and parrying
         if (_currentState.canAttack)
         {
-            _playerDefense.StartDefenseTimer(_currentState.exitTime / masterTimeSpeed * .4f, _currentState.exitTime / masterTimeSpeed, _curStance,
+            _playerDefense.StartDefenseTimer(_currentState.exitTime / masterTimeSpeed * .8f, _currentState.exitTime / masterTimeSpeed, _curStance,
                 _currentState.baseAttackDamage, _enemyAttacking);
         }
     }
@@ -103,6 +91,8 @@ public class TimingMachineEnemy : MonoBehaviour
             {
                 if (_enemyAttacking.attacking)
                     SetCurrentState(_enemyAttacking.GetNextState());
+                else if (_enemyDefense.defending)
+                    SetCurrentState(_enemyDefense.GetNextState());
             }
             //print(_currentState.transform.name);
         }
@@ -125,13 +115,17 @@ public class TimingMachineEnemy : MonoBehaviour
 
     public void FailAction()
     {
-        _enemyAttacking.StopAttackCycle();
         SetCurrentState(missTimeStates);
     }
 
     public void Hurt()
     {
         SetCurrentState(hurtStates);
+    }
+
+    public TimingState ReturnIdle()
+    {
+        return (idleStates[(int)_curStance]);
     }
 
     public void SetDirection(bool isFacingRight)

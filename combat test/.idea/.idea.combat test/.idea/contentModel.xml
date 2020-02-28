@@ -17,6 +17,7 @@
             <e p="Constants.cs" t="Include" />
             <e p="EnemyAttacking.cs" t="Include" />
             <e p="EnemyCyclesHolder.cs" t="Include" />
+            <e p="EnemyDefense.cs" t="Include" />
             <e p="EnemyMove.cs" t="Include" />
             <e p="Health.cs" t="Include" />
             <e p="InputAttack.cs" t="Include" />

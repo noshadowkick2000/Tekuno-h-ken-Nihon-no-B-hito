@@ -10,6 +10,7 @@ public class EnemyMove : MonoBehaviour
     private Health _health;
     private TimingMachineEnemy _timingMachineEnemy;
     private EnemyAttacking _enemyAttacking;
+    private EnemyDefense _enemyDefense;
     private TimingMachine _player;
     private InputDefense _playerDefense;
 
@@ -47,6 +48,7 @@ public class EnemyMove : MonoBehaviour
         _health = GetComponent<Health>();
         _timingMachineEnemy = GetComponent<TimingMachineEnemy>();
         _enemyAttacking = GetComponent<EnemyAttacking>();
+        _enemyDefense = GetComponent<EnemyDefense>();
         _player = FindObjectOfType<TimingMachine>();
         _playerDefense = FindObjectOfType<InputDefense>();
 
@@ -67,7 +69,7 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
         CheckEnemyInRange();
-        if (!_enemyAttacking.attacking)
+        if (!_enemyAttacking.attacking && !_enemyDefense.defending)
         {
             CheckEnemyInAttackRange();
             MoveEnemy();
@@ -102,6 +104,11 @@ public class EnemyMove : MonoBehaviour
             _playerDefense.StopDefenseTimer();
             if (_enemyAttacking.attacking)
                 _enemyAttacking.StopAttackCycle();
+            if (_enemyDefense.defending)
+            {
+                print("notEngaged");
+                _enemyDefense.StopDefensiveCycle();
+            }
         }
     }
 

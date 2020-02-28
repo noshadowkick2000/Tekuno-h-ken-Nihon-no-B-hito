@@ -63,7 +63,7 @@ public class InputMove : MonoBehaviour
     private void CheckEnemyInRange()
     {
         //maybe can change to single function later and set engaged in GetClosestEnemy
-        TimingMachineEnemy enemy = GetClosestEnemy();
+        EnemyDefense enemy = GetClosestEnemy();
         if (enemy == null)
         {
             engaged = false;
@@ -106,17 +106,17 @@ public class InputMove : MonoBehaviour
         }
     }
 
-    private TimingMachineEnemy GetClosestEnemy()
+    private EnemyDefense GetClosestEnemy()
     {
-        TimingMachineEnemy[] leftEnemies = leftCollider.GetEnemies();
-        TimingMachineEnemy[] rightEnemies = rightCollider.GetEnemies();
-        
-        TimingMachineEnemy closestEnemy = null;
+        EnemyDefense[] leftEnemies = leftCollider.GetEnemies();
+        EnemyDefense[] rightEnemies = rightCollider.GetEnemies();
+
+        EnemyDefense closestEnemy = null;
 
         if (leftEnemies.Length > 0 || rightEnemies.Length > 0)
         {
             float closestDistanceLeft = 100;
-            TimingMachineEnemy closestLeftEnemy = null;
+            EnemyDefense closestLeftEnemy = null;
 
             foreach (var enemy in leftEnemies)
             {
@@ -129,7 +129,7 @@ public class InputMove : MonoBehaviour
             }
         
             float closestDistanceRight = 100;
-            TimingMachineEnemy closestRightEnemy = null;
+            EnemyDefense closestRightEnemy = null;
 
             foreach (var enemy in rightEnemies)
             {
@@ -140,7 +140,7 @@ public class InputMove : MonoBehaviour
                     closestRightEnemy = enemy;
                 }
             }
-
+            
             if (closestDistanceLeft > closestDistanceRight)
             {
                 closestEnemy = closestRightEnemy;

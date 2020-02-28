@@ -43,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyDefense.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -64,16 +65,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/README.txt" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyCyclesHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyDefense.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
       </list>
     </option>
   </component>
@@ -165,6 +167,13 @@
       <workItem from="1582725977615" duration="3404000" />
       <workItem from="1582825806014" duration="2113000" />
       <workItem from="1582828721163" duration="1469000" />
+      <workItem from="1582842437225" duration="2894000" />
+      <workItem from="1582845408033" duration="2546000" />
+      <workItem from="1582877512655" duration="5626000" />
+      <workItem from="1582887895902" duration="68000" />
+      <workItem from="1582896407153" duration="75000" />
+      <workItem from="1582896579623" duration="100000" />
+      <workItem from="1582896839991" duration="479000" />
     </task>
     <servers />
   </component>

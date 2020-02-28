@@ -29,7 +29,7 @@ public class InputDefense : MonoBehaviour
     {
         if (Time.time >= _endTimeDefense)
             CheckDefenseOver();
-        if (running)
+        if (running && _defending)
         {
             CheckDefense();
         }
@@ -64,14 +64,14 @@ public class InputDefense : MonoBehaviour
             if (Time.time < _startTimeBlock)
             {
                 //parry
-                print("parry");
+                //print("parry");
                 _timingMachine.ParrySuccess();
                 //_enemy.StopAttackCycle();
             }
             else if (Time.time < _endTimeDefense)
             {
                 //block
-                print("block");
+                //print("block");
                 _timingMachine.BlockSuccess();
                 //_enemy.StopAttackCycle();
             }
@@ -79,7 +79,7 @@ public class InputDefense : MonoBehaviour
         }
         else if (inputStance != Constants.Stances.Null)
         {
-            print("oof");
+            //print("oof");
             _timingMachine.FailAction();
         }
     }
@@ -87,7 +87,7 @@ public class InputDefense : MonoBehaviour
     public void StartDefenseTimer(float startBlock, float endTime, Constants.Stances enemyStances, int damage, EnemyAttacking enemy)
     {
         CheckDefenseOver();
-        print("start");
+        //print("start");
         _defending = true;
         _startTimeBlock = Time.time + startBlock;
         _endTimeDefense = Time.time + endTime;
@@ -102,17 +102,16 @@ public class InputDefense : MonoBehaviour
         //print("stopped");
         _defending = false;
         _defensiveStance = Constants.Stances.Free;
-        _damage = 0;
     }
 
     private void CheckDefenseOver()
     {
         if (_defending)
         {
-            //print("fakoff");
+            print("fakoff");
+            StopDefenseTimer();
             _health.Damage(_damage);
             _timingMachine.Hurt();
-            StopDefenseTimer();
         }
     }
 }

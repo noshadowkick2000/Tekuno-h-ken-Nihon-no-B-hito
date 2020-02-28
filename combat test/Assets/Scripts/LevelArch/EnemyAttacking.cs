@@ -50,7 +50,11 @@ public class EnemyAttacking : MonoBehaviour
         if (_curCycleState < cyclesHolders[_curCycle].statesInCycle.Length - 1)
             _curCycleState++;
         else
+        {
+            //print("getnextstateStop");
             StopAttackCycle();
+            return _timingMachineEnemy.ReturnIdle();
+        }
         return cyclesHolders[_curCycle].statesInCycle[_curCycleState];
     }
 }
