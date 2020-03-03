@@ -44,17 +44,17 @@ public class SwordInput : MonoBehaviour
         }
         else
         {
-            if (InBetween(angle, 337.5f, 360) || InBetween(angle, 0, 22.5f))
+            if (InBetween(angle, 355, 360) || InBetween(angle, 0, 5))
                 _inputs[(int) Directions.Up] = true;
-            else if (InBetween(angle, 22.5f, 67.5f))
+            else if (InBetween(angle, 0, 90))
                 _inputs[(int) Directions.RightUp] = true;
-            else if (InBetween(angle, 112.5f, 157.5f))
+            else if (InBetween(angle, 90, 180))
                 _inputs[(int) Directions.RightDown] = true;
-            else if (InBetween(angle, 157.5f, 202.5f))
+            else if (angle == 180)
                 _inputs[(int) Directions.Down] = true;
-            else if (InBetween(angle, 202.5f, 247.5f))
+            else if (InBetween(angle, 180, 270))
                 _inputs[(int) Directions.LeftDown] = true;
-            else if (InBetween(angle, 292.5f, 337.5f))
+            else if (InBetween(angle, 270, 360))
                 _inputs[(int) Directions.LeftUp] = true;
         } 
     }

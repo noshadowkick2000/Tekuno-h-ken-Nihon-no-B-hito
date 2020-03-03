@@ -30,8 +30,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -65,6 +67,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyDefense.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
       </list>
     </option>
@@ -166,6 +170,7 @@
       <workItem from="1582896839991" duration="479000" />
       <workItem from="1583191975187" duration="2990000" />
       <workItem from="1583239681945" duration="3151000" />
+      <workItem from="1583246756882" duration="8492000" />
     </task>
     <servers />
   </component>
