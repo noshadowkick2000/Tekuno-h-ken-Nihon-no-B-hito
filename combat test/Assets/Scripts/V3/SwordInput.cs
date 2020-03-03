@@ -17,11 +17,12 @@ public class SwordInput : MonoBehaviour
     }
     
     private bool[] _inputs = new bool[6];
+    private bool[] _oldInputs = new bool[6];
     
     // Update is called once per frame
     void Update()
     {
-        Reset();
+        SaveReset();
 
         float x = Input.GetAxis("HorizontalRight");
         float y = Input.GetAxis("VerticalRight");
@@ -30,7 +31,7 @@ public class SwordInput : MonoBehaviour
         float angle;
 
         if (x < 0)
-            angle = Vector2.SignedAngle(Vector2.up, direction) + 360;
+            angle = 360 - Vector2.Angle(Vector2.up, direction);
         else
             angle = Vector2.Angle(Vector2.up, direction);
 
@@ -58,9 +59,13 @@ public class SwordInput : MonoBehaviour
         } 
     }
 
-    public bool GetDirection(Directions direction)
+    public bool GetDirectionDown(Directions direction)
     {
-        return _inputs[(int) direction];
+
+        if (_inputs[(int) direction] && !_oldInputs[(int) direction])
+            return true;
+        else
+            return false;
     }
 
     private bool InBetween(float angle, float lower, float higher)
@@ -71,10 +76,11 @@ public class SwordInput : MonoBehaviour
             return false;
     }
 
-    private void Reset()
+    private void SaveReset()
     {
         for (int i = 0; i < _inputs.Length; i++)
         {
+            _oldInputs[i] = _inputs[i];
             _inputs[i] = false;
         }
     }

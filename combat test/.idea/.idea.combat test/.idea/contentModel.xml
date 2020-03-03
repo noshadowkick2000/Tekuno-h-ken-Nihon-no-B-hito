@@ -37,6 +37,7 @@
           </e>
           <e p="V3" t="Include">
             <e p="SwordInput.cs" t="Include" />
+            <e p="Temp.cs" t="Include" />
           </e>
         </e>
         <e p="SpriteShader.shader" t="Include" />

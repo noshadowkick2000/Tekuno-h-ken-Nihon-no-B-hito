@@ -27,6 +27,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
@@ -63,6 +64,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyDefense.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
       </list>
     </option>
@@ -163,6 +165,7 @@
       <workItem from="1582896579623" duration="100000" />
       <workItem from="1582896839991" duration="479000" />
       <workItem from="1583191975187" duration="2990000" />
+      <workItem from="1583239681945" duration="3151000" />
     </task>
     <servers />
   </component>
