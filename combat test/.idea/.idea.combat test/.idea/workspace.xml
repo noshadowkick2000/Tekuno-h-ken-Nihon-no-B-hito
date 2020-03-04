@@ -31,6 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -68,8 +69,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
       </list>
     </option>
   </component>
@@ -171,6 +173,9 @@
       <workItem from="1583191975187" duration="2990000" />
       <workItem from="1583239681945" duration="3151000" />
       <workItem from="1583246756882" duration="8492000" />
+      <workItem from="1583268090923" duration="3096000" />
+      <workItem from="1583328175590" duration="1710000" />
+      <workItem from="1583338815499" duration="12000" />
     </task>
     <servers />
   </component>

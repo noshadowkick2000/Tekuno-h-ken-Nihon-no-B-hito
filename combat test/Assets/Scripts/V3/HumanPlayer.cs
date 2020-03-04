@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,18 @@ public class HumanPlayer : Character
     [Header("Movement and Combat")] 
     [SerializeField] private float moveSpeed;
 
-    [Header("Stamina cost for each type of action, see enums in SwordInput for order")] [SerializeField]
-    private int[] actionCosts = new int[6];
+    [Header("Stamina cost for each type of action, see enums in SwordInput for order")] 
+    [SerializeField] private int[] actionCosts = new int[6];
 
-    public bool _canLeftStick = true; //canMove
+    [Header("Amount of damage and relative coordinates and sizes of overlap box")] 
+    [SerializeField] private HitHolder[] hitHolder;
+
+    [Header("Debug")] [SerializeField] private int curDebugHit;
+
+    private bool _canLeftStick = true; //canMove
     private bool _canRightStick = true; //canAttackOrParry
+    
+    private Collider[] _collider_buffer = new Collider[10];
     
 #pragma warning restore 0649
     
@@ -40,14 +48,19 @@ public class HumanPlayer : Character
 
     public void SetFree()
     {
-        print("on");
         _canLeftStick = true;
+        _canRightStick = true;
     }
 
     public void SetAttacking()
     {
-        print("off");
         _canLeftStick = false;
+    }
+    
+    public void SetRolling()
+    {
+        _canLeftStick = false;
+        _canRightStick = false;
     }
 
     private void LeftStickInput()
@@ -142,6 +155,12 @@ public class HumanPlayer : Character
                     animator.SetTrigger("AttackLD");
             }
         }
+
+        /*if (Input.GetButtonDown("Roll"))
+        {
+            animator.SetTrigger("Roll");
+            print("oy");
+        }*/
     }
     
     private void ResetTriggers()
@@ -152,5 +171,22 @@ public class HumanPlayer : Character
         animator.ResetTrigger("AttackLD");
         animator.ResetTrigger("AttackHU");
         animator.ResetTrigger("AttackHD");
+    }
+
+    public void Hit(int id) //corresponds with number in list of HitHolders
+    {
+        int total = Physics.OverlapBoxNonAlloc(hitHolder[curDebugHit].relPosition + transform.position, 
+            hitHolder[curDebugHit].halfSize, _collider_buffer, Quaternion.identity);
+
+        for (int i = 0; i < total; i++)
+        {
+            //_collider_buffer[i].GetComponent<Enemy>().Hit;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0f, 1f, 0f, 0.5f);
+        Gizmos.DrawWireCube(hitHolder[curDebugHit].relPosition + transform.position, hitHolder[curDebugHit].halfSize*2);
     }
 }
