@@ -32,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,6 +72,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
       </list>
     </option>
@@ -176,6 +178,9 @@
       <workItem from="1583268090923" duration="3096000" />
       <workItem from="1583328175590" duration="1710000" />
       <workItem from="1583338815499" duration="12000" />
+      <workItem from="1583371664233" duration="124000" />
+      <workItem from="1583418630869" duration="3740000" />
+      <workItem from="1583424711919" duration="2256000" />
     </task>
     <servers />
   </component>

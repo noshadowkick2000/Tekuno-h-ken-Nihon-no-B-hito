@@ -1,12 +1,22 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HumanPlayer : Character
 {
 
 #pragma warning disable 0649
+
+    //DOWNWARDS STRIKES HIT HIGH, UPWARDS STRIKES HIT LOW
+    public enum AttackHeight
+    {
+        DownwardsLight = 0,
+        UpwardsLight = 1,
+        DownHeavy = 2,
+        UpwardsHeavy = 3
+    }
     
     private SwordInput _swordInput;
 
@@ -17,7 +27,7 @@ public class HumanPlayer : Character
     [SerializeField] private int[] actionCosts = new int[6];
 
     [Header("Amount of damage and relative coordinates and sizes of overlap box")] 
-    [SerializeField] private HitHolder[] hitHolder;
+    [SerializeField] private HitHolder[] hitHolder = new HitHolder[4];
 
     [Header("Debug")] [SerializeField] private int curDebugHit;
 
@@ -72,7 +82,8 @@ public class HumanPlayer : Character
 
     private void RightStickInput()
     {
-        if (_swordInput.GetDirectionDown(SwordInput.Directions.Up))
+        //parrying now with attacks
+        /*if (_swordInput.GetDirectionDown(SwordInput.Directions.Up))
         {
             if (_canLeftStick)
             {
@@ -90,7 +101,7 @@ public class HumanPlayer : Character
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.Down]))
                     animator.SetTrigger("ParryDown");
             }
-        }
+        }*/
 
         if (_swordInput.GetDirectionDown(SwordInput.Directions.LeftUp))
         {
@@ -173,14 +184,17 @@ public class HumanPlayer : Character
         animator.ResetTrigger("AttackHD");
     }
 
-    public void Hit(int id) //corresponds with number in list of HitHolders
+    public void Hit(AttackHeight attack) //corresponds with number in list of HitHolders
     {
-        int total = Physics.OverlapBoxNonAlloc(hitHolder[curDebugHit].relPosition + transform.position, 
-            hitHolder[curDebugHit].halfSize, _collider_buffer, Quaternion.identity);
+        int dmg = hitHolder[(int) attack].baseDamage;
+        Vector3 hitLocation = hitHolder[(int) attack].relPosition + transform.position;
+        int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
+            _collider_buffer, Quaternion.identity);
 
         for (int i = 0; i < total; i++)
         {
-            //_collider_buffer[i].GetComponent<Enemy>().Hit;
+            if (_collider_buffer[i].CompareTag("Enemy"))
+                _collider_buffer[i].GetComponent<Enemy>().GetHit(hitLocation.y, dmg);
         }
     }
 
