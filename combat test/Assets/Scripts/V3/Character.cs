@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     [Header("Non-Serializable")]
     public Animator animator;
     public Rigidbody rigidBody;
+    public SpriteRenderer spriteRenderer;
     
     [Header("Current Health and Stamina")]
     public int curHealth;
@@ -31,6 +32,7 @@ public class Character : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         curHealth = maxHealth;
         curStamina = maxStamina;

@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\V2\TimingMachineEnemy.cs" />
      <Compile Include="Assets\Scripts\V2\TimingState.cs" />
      <Compile Include="Assets\Scripts\V2\TriggerScript.cs" />
+     <Compile Include="Assets\Scripts\V3\AnimationMover.cs" />
      <Compile Include="Assets\Scripts\V3\Character.cs" />
      <Compile Include="Assets\Scripts\V3\Enemy.cs" />
      <Compile Include="Assets\Scripts\V3\HitHolder.cs" />

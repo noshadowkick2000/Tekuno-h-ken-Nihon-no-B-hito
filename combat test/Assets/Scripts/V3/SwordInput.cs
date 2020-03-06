@@ -34,29 +34,15 @@ public class SwordInput : MonoBehaviour
             angle = 360 - Vector2.Angle(Vector2.up, direction);
         else
             angle = Vector2.Angle(Vector2.up, direction);
-
-        if (angle == 0)
-        {
-            if (y > 0)
-            {
-                _inputs[(int) Directions.Up] = true;
-            } 
-        }
-        else
-        {
-            if (InBetween(angle, 355, 360) || InBetween(angle, 0, 5))
-                _inputs[(int) Directions.Up] = true;
-            else if (InBetween(angle, 0, 90))
-                _inputs[(int) Directions.RightUp] = true;
-            else if (InBetween(angle, 90, 180))
-                _inputs[(int) Directions.RightDown] = true;
-            else if (angle == 180)
-                _inputs[(int) Directions.Down] = true;
-            else if (InBetween(angle, 180, 270))
-                _inputs[(int) Directions.LeftDown] = true;
-            else if (InBetween(angle, 270, 360))
-                _inputs[(int) Directions.LeftUp] = true;
-        } 
+        
+        if (InBetween(angle, 0, 90))
+            _inputs[(int) Directions.RightUp] = true;
+        else if (InBetween(angle, 90, 180))
+            _inputs[(int) Directions.RightDown] = true;
+        else if (InBetween(angle, 180, 270))
+            _inputs[(int) Directions.LeftDown] = true;
+        else if (InBetween(angle, 270, 360))
+            _inputs[(int) Directions.LeftUp] = true;
     }
 
     public bool GetDirectionDown(Directions direction)

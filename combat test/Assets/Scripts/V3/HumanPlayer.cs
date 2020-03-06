@@ -75,7 +75,22 @@ public class HumanPlayer : Character
 
     private void LeftStickInput()
     {
-        float x = Input.GetAxis("moveHorizontal");
+        float x = Input.GetAxisRaw("moveHorizontal");
+        print(x);
+
+        if (x > .98f)
+        {
+            isFacingRight = true; 
+        }
+        else if (x < -.98f)
+        {
+            isFacingRight = false;
+        }
+
+        if (!isFacingRight)
+            spriteRenderer.flipX = true;
+        else
+            spriteRenderer.flipX = false;
 
         rigidBody.MovePosition(rigidBody.position + new Vector3(x*moveSpeed, 0, 0));
     }
@@ -107,7 +122,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
 
-            if (isFacingRight)
+            if (!isFacingRight)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.RightUp])) 
                     animator.SetTrigger("AttackLU");
@@ -123,7 +138,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
 
-            if (isFacingRight)
+            if (!isFacingRight)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.RightDown])) 
                     animator.SetTrigger("AttackLD");
@@ -139,7 +154,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
             
-            if (isFacingRight)
+            if (!isFacingRight)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.LeftUp])) 
                     animator.SetTrigger("AttackHU");
@@ -155,7 +170,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
             
-            if (isFacingRight)
+            if (!isFacingRight)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.LeftDown])) 
                     animator.SetTrigger("AttackHD");
@@ -187,7 +202,11 @@ public class HumanPlayer : Character
     public void Hit(AttackHeight attack) //corresponds with number in list of HitHolders
     {
         int dmg = hitHolder[(int) attack].baseDamage;
-        Vector3 hitLocation = hitHolder[(int) attack].relPosition + transform.position;
+        Vector3 hitLocation;
+        if (isFacingRight)
+            hitLocation = hitHolder[(int) attack].relPosition + transform.position;
+        else
+            hitLocation = transform.position - hitHolder[(int) attack].relPosition;
         int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
             _collider_buffer, Quaternion.identity);
 
