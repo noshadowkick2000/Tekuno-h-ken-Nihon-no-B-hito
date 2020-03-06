@@ -19,6 +19,7 @@ public class HumanPlayer : Character
     }
     
     private SwordInput _swordInput;
+    private MoveInput _moveInput;
 
     [Header("Movement and Combat")] 
     [SerializeField] private float moveSpeed;
@@ -35,7 +36,7 @@ public class HumanPlayer : Character
     private bool _canRightStick = true; //canAttackOrParry
     
     private Collider[] _collider_buffer = new Collider[10];
-    
+
 #pragma warning restore 0649
     
     // Start is called before the first frame update
@@ -43,6 +44,7 @@ public class HumanPlayer : Character
     {
         Init();
         _swordInput = FindObjectOfType<SwordInput>();
+        _moveInput = FindObjectOfType<MoveInput>();
     }
 
     // Update is called once per frame
@@ -60,6 +62,9 @@ public class HumanPlayer : Character
     {
         _canLeftStick = true;
         _canRightStick = true;
+        
+        animator.ResetTrigger("DashForward");
+        animator.ResetTrigger("DashBackward");
     }
 
     public void SetAttacking()
@@ -75,14 +80,25 @@ public class HumanPlayer : Character
 
     private void LeftStickInput()
     {
-        float x = Input.GetAxisRaw("moveHorizontal");
-        print(x);
+        float x = _moveInput.GetMoveStick();
 
-        if (x > .98f)
+        //not working properly yet
+        if (_moveInput.DoubleLeft())
+        {
+            print("for");
+            animator.SetTrigger(isFacingRight ? "DashBackward" : "DashForward");
+        }
+        else if (_moveInput.DoubleRight())
+        {
+            print("back");
+            animator.SetTrigger(isFacingRight ? "DashForward" : "DashBackward");
+        }
+
+        if (_moveInput.HoldRight())
         {
             isFacingRight = true; 
         }
-        else if (x < -.98f)
+        else if (_moveInput.HoldLeft())
         {
             isFacingRight = false;
         }

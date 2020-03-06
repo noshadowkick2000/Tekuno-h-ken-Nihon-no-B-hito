@@ -41,6 +41,7 @@
             <e p="Enemy.cs" t="Include" />
             <e p="HitHolder.cs" t="Include" />
             <e p="HumanPlayer.cs" t="Include" />
+            <e p="MoveInput.cs" t="Include" />
             <e p="SwordInput.cs" t="Include" />
             <e p="Temp.cs" t="Include" />
           </e>

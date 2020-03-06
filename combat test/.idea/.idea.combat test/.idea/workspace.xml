@@ -28,15 +28,16 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -72,10 +73,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" />
       </list>
     </option>
   </component>
@@ -185,6 +187,8 @@
       <workItem from="1583424711919" duration="2256000" />
       <workItem from="1583453458966" duration="2666000" />
       <workItem from="1583496918170" duration="2383000" />
+      <workItem from="1583501913846" duration="3951000" />
+      <workItem from="1583507505559" duration="2251000" />
     </task>
     <servers />
   </component>
