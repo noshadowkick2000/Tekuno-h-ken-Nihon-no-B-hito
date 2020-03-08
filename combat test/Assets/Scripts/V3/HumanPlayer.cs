@@ -54,6 +54,8 @@ public class HumanPlayer : Character
             LeftStickInput();
         if (_canRightStick)
             RightStickInput();
+
+        UniversalInput();
         
         RegenerateStamina(5);
     }
@@ -65,6 +67,9 @@ public class HumanPlayer : Character
         
         animator.ResetTrigger("DashForward");
         animator.ResetTrigger("DashBackward");
+        animator.ResetTrigger("MoveForward");
+        animator.ResetTrigger("MoveBackward");
+        animator.ResetTrigger("StopMove");
     }
 
     public void SetAttacking()
@@ -78,20 +83,45 @@ public class HumanPlayer : Character
         _canRightStick = false;
     }
 
+    private void UniversalInput()
+    {
+        if (Input.GetButtonDown("DrawSword"))
+            animator.SetBool("SwordDrawn", !animator.GetBool("SwordDrawn"));
+    }
+
     private void LeftStickInput()
     {
         float x = _moveInput.GetMoveStick();
-
+        
         //not working properly yet
         if (_moveInput.DoubleLeft())
         {
-            print("for");
             animator.SetTrigger(isFacingRight ? "DashBackward" : "DashForward");
+            print("hit");
         }
         else if (_moveInput.DoubleRight())
         {
-            print("back");
             animator.SetTrigger(isFacingRight ? "DashForward" : "DashBackward");
+        }
+        
+        if (x == 0)
+            animator.SetTrigger("StopMove");
+        else
+        {
+            if (x > 0)
+            {
+                if (isFacingRight)
+                    animator.SetTrigger("MoveForward");
+                else
+                    animator.SetTrigger("MoveBackward");
+            }
+            else if (x < 0)
+            {
+                if (isFacingRight)
+                    animator.SetTrigger("MoveBackward");
+                else
+                    animator.SetTrigger("MoveForward");
+            }
         }
 
         if (_moveInput.HoldRight())
