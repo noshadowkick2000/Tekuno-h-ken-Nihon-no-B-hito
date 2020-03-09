@@ -97,7 +97,6 @@ public class HumanPlayer : Character
         if (_moveInput.DoubleLeft())
         {
             animator.SetTrigger(isFacingRight ? "DashBackward" : "DashForward");
-            print("hit");
         }
         else if (_moveInput.DoubleRight())
         {
