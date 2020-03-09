@@ -27,23 +27,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/TriggerScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyCyclesHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Constants.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Health.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/InputMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/InputAttack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyAttacking.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyDefense.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -76,6 +71,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyDefense.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Projectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
       </list>
     </option>
   </component>
@@ -174,6 +178,26 @@
       <workItem from="1582896407153" duration="75000" />
       <workItem from="1582896579623" duration="100000" />
       <workItem from="1582896839991" duration="479000" />
+      <workItem from="1583191975187" duration="2990000" />
+      <workItem from="1583239681945" duration="3151000" />
+      <workItem from="1583246756882" duration="8492000" />
+      <workItem from="1583268090923" duration="3096000" />
+      <workItem from="1583328175590" duration="1710000" />
+      <workItem from="1583338815499" duration="12000" />
+      <workItem from="1583371664233" duration="124000" />
+      <workItem from="1583418630869" duration="3740000" />
+      <workItem from="1583424711919" duration="2256000" />
+      <workItem from="1583453458966" duration="2666000" />
+      <workItem from="1583496918170" duration="2383000" />
+      <workItem from="1583501913846" duration="3951000" />
+      <workItem from="1583507505559" duration="2251000" />
+      <workItem from="1583626579496" duration="457000" />
+      <workItem from="1583687728460" duration="1588000" />
+      <workItem from="1583690303022" duration="807000" />
+      <workItem from="1583713321655" duration="486000" />
+      <workItem from="1583760110473" duration="4851000" />
+      <workItem from="1583765183834" duration="772000" />
+      <workItem from="1583766813497" duration="87000" />
     </task>
     <servers />
   </component>

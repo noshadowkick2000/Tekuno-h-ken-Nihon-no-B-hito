@@ -13,7 +13,14 @@
         </e>
         <e p="README.txt" t="Include" />
         <e p="Scripts" t="Include">
-          <e p="LevelArch" t="Include">
+          <e p="V1" t="Include">
+            <e p="LevelArch" t="Include">
+              <e p="Player" t="Include">
+                <e p="Player.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="V2" t="Include">
             <e p="Constants.cs" t="Include" />
             <e p="EnemyAttacking.cs" t="Include" />
             <e p="EnemyCyclesHolder.cs" t="Include" />
@@ -23,13 +30,21 @@
             <e p="InputAttack.cs" t="Include" />
             <e p="InputDefense.cs" t="Include" />
             <e p="InputMove.cs" t="Include" />
-            <e p="Player" t="Include">
-              <e p="Player.cs" t="Include" />
-            </e>
             <e p="TimingMachine.cs" t="Include" />
             <e p="TimingMachineEnemy.cs" t="Include" />
             <e p="TimingState.cs" t="Include" />
             <e p="TriggerScript.cs" t="Include" />
+          </e>
+          <e p="V3" t="Include">
+            <e p="AnimationMover.cs" t="Include" />
+            <e p="Character.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
+            <e p="HitHolder.cs" t="Include" />
+            <e p="HumanPlayer.cs" t="Include" />
+            <e p="MoveInput.cs" t="Include" />
+            <e p="Projectile.cs" t="Include" />
+            <e p="SwordInput.cs" t="Include" />
+            <e p="Temp.cs" t="Include" />
           </e>
         </e>
         <e p="SpriteShader.shader" t="Include" />
