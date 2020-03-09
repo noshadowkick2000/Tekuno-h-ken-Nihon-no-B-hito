@@ -18,18 +18,6 @@ public class Temp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_swordInput.GetDirectionDown(SwordInput.Directions.Up))
-        {
-            ResetTriggers();
-            _animator.SetTrigger("ParryUp");
-        }
-
-        if (_swordInput.GetDirectionDown(SwordInput.Directions.Down))
-        {
-            ResetTriggers();
-            _animator.SetTrigger("ParryDown");
-        }
-
         if (_swordInput.GetDirectionDown(SwordInput.Directions.LeftUp))
         {
             ResetTriggers();

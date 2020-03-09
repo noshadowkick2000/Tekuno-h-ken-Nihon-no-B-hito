@@ -24,7 +24,7 @@ public class HumanPlayer : Character
     [Header("Movement and Combat")] 
     [SerializeField] private float moveSpeed;
 
-    [Header("Stamina cost for each type of action, see enums in SwordInput for order")] 
+    [Header("Stamina cost for each type of action")] 
     [SerializeField] private int[] actionCosts = new int[6];
 
     [Header("Amount of damage and relative coordinates and sizes of overlap box")] 
@@ -57,7 +57,7 @@ public class HumanPlayer : Character
 
         UniversalInput();
         
-        RegenerateStamina(5);
+        RegenerateStamina(2);
     }
 
     public void SetFree()
@@ -96,11 +96,13 @@ public class HumanPlayer : Character
         //not working properly yet
         if (_moveInput.DoubleLeft())
         {
-            animator.SetTrigger(isFacingRight ? "DashBackward" : "DashForward");
+            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
+                animator.SetTrigger(isFacingRight ? "DashBackward" : "DashForward");
         }
         else if (_moveInput.DoubleRight())
         {
-            animator.SetTrigger(isFacingRight ? "DashForward" : "DashBackward");
+            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
+                animator.SetTrigger(isFacingRight ? "DashForward" : "DashBackward");
         }
         
         if (x == 0)
@@ -260,6 +262,11 @@ public class HumanPlayer : Character
             if (_collider_buffer[i].CompareTag("Enemy"))
                 _collider_buffer[i].GetComponent<Enemy>().GetHit(hitLocation.y, dmg);
         }
+    }
+
+    public void GetHit(int damage, float height)
+    {
+        Wound(damage);
     }
 
     private void OnDrawGizmos()

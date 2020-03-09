@@ -8,8 +8,8 @@ public class SwordInput : MonoBehaviour
 {
     public enum Directions
     {
-        Up = 0,
-        Down = 1,
+        Dash = 0,
+        Unknown = 1,
         LeftUp = 2,
         LeftDown = 3,
         RightUp = 4,

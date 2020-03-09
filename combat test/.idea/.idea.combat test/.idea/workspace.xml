@@ -35,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
@@ -70,13 +71,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/TimingMachineEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/EnemyDefense.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/InputDefense.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Projectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
       </list>
     </option>
@@ -193,6 +195,8 @@
       <workItem from="1583687728460" duration="1588000" />
       <workItem from="1583690303022" duration="807000" />
       <workItem from="1583713321655" duration="486000" />
+      <workItem from="1583760110473" duration="4851000" />
+      <workItem from="1583765183834" duration="772000" />
     </task>
     <servers />
   </component>

@@ -15,6 +15,12 @@ public class Enemy : Character
     public float highResistance; //multiplier of incoming damage depending on height
     [Range(0.0f, 1.0f)] 
     public float lowResistance;
+    [Header("Prefabs for projectiles, if any")]
+    [SerializeField] private GameObject[] projectiles;
+    [SerializeField] private Vector3[] projectileSpawn;
+    [SerializeField] private int debugSpawn;
+
+    private HumanPlayer _player;
     
 #pragma warning restore 0649
 
@@ -48,5 +54,18 @@ public class Enemy : Character
                 Wound((int)(damage*lowResistance));
             }   
         }
+    }
+
+    public void ShootProjectile(int projectile)
+    {
+        if (isFacingRight)
+            Instantiate(projectiles[projectile], transform.position + projectileSpawn[projectile], transform.rotation);
+        else
+            Instantiate(projectiles[projectile], transform.position - projectileSpawn[projectile], transform.rotation);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(transform.position + projectileSpawn[debugSpawn], .2f);
     }
 }
