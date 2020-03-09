@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
     [SerializeField] private int maxStamina;
 
     [Header("Other")]
-    public bool isFacingRight = true;
+    public bool isFacingForward = true;
     
 #pragma warning restore 0649
     

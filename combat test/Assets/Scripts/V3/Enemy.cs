@@ -58,7 +58,7 @@ public class Enemy : Character
 
     public void ShootProjectile(int projectile)
     {
-        if (isFacingRight)
+        if (isFacingForward)
             Instantiate(projectiles[projectile], transform.position + projectileSpawn[projectile], transform.rotation);
         else
             Instantiate(projectiles[projectile], transform.position - projectileSpawn[projectile], transform.rotation);

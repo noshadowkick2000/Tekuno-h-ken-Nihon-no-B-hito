@@ -97,12 +97,12 @@ public class HumanPlayer : Character
         if (_moveInput.DoubleLeft())
         {
             if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
-                animator.SetTrigger(isFacingRight ? "DashBackward" : "DashForward");
+                animator.SetTrigger(isFacingForward ? "DashBackward" : "DashForward");
         }
         else if (_moveInput.DoubleRight())
         {
             if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
-                animator.SetTrigger(isFacingRight ? "DashForward" : "DashBackward");
+                animator.SetTrigger(isFacingForward ? "DashForward" : "DashBackward");
         }
         
         if (x == 0)
@@ -111,14 +111,14 @@ public class HumanPlayer : Character
         {
             if (x > 0)
             {
-                if (isFacingRight)
+                if (isFacingForward)
                     animator.SetTrigger("MoveForward");
                 else
                     animator.SetTrigger("MoveBackward");
             }
             else if (x < 0)
             {
-                if (isFacingRight)
+                if (isFacingForward)
                     animator.SetTrigger("MoveBackward");
                 else
                     animator.SetTrigger("MoveForward");
@@ -127,14 +127,14 @@ public class HumanPlayer : Character
 
         if (_moveInput.HoldRight())
         {
-            isFacingRight = true; 
+            isFacingForward = true; 
         }
         else if (_moveInput.HoldLeft())
         {
-            isFacingRight = false;
+            isFacingForward = false;
         }
 
-        if (!isFacingRight)
+        if (!isFacingForward)
             spriteRenderer.flipX = true;
         else
             spriteRenderer.flipX = false;
@@ -169,7 +169,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
 
-            if (!isFacingRight)
+            if (!isFacingForward)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.RightUp])) 
                     animator.SetTrigger("AttackLU");
@@ -185,7 +185,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
 
-            if (!isFacingRight)
+            if (!isFacingForward)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.RightDown])) 
                     animator.SetTrigger("AttackLD");
@@ -201,7 +201,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
             
-            if (!isFacingRight)
+            if (!isFacingForward)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.LeftUp])) 
                     animator.SetTrigger("AttackHU");
@@ -217,7 +217,7 @@ public class HumanPlayer : Character
         {
             ResetTriggers();
             
-            if (!isFacingRight)
+            if (!isFacingForward)
             {
                 if (UseStamina(actionCosts[(int) SwordInput.Directions.LeftDown])) 
                     animator.SetTrigger("AttackHD");
@@ -250,7 +250,7 @@ public class HumanPlayer : Character
     {
         int dmg = hitHolder[(int) attack].baseDamage;
         Vector3 hitLocation;
-        if (isFacingRight)
+        if (isFacingForward)
             hitLocation = hitHolder[(int) attack].relPosition + transform.position;
         else
             hitLocation = transform.position - hitHolder[(int) attack].relPosition;

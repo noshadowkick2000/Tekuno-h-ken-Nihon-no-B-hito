@@ -38,7 +38,7 @@ public class AnimationMover : MonoBehaviour
     {
         _inAnimation = true;
         _baseValue = _character.rigidBody.position.x;
-        _facingRight = _character.isFacingRight;
+        _facingRight = _character.isFacingForward;
     }
     
     public void ReleaseAnimationMove()
