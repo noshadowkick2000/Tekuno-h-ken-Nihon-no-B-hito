@@ -15,10 +15,13 @@ public class Enemy : Character
     public float highResistance; //multiplier of incoming damage depending on height
     [Range(0.0f, 1.0f)] 
     public float lowResistance;
+    
     [Header("Prefabs for projectiles, if any")]
     [SerializeField] private GameObject[] projectiles;
     [SerializeField] private Vector3[] projectileSpawn;
     [SerializeField] private int debugSpawn;
+
+    private Collider[] _collider_buffer = new Collider[10];
 
     private HumanPlayer _player;
     
@@ -33,6 +36,24 @@ public class Enemy : Character
     void Update()
     {
         
+    }
+
+    public void Hit(HumanPlayer.AttackHeight attack)
+    {
+        int dmg = hitHolder[(int) attack].baseDamage;
+        Vector3 hitLocation;
+        if (isFacingForward)
+            hitLocation = hitHolder[(int) attack].relPosition + transform.position;
+        else
+            hitLocation = transform.position - hitHolder[(int) attack].relPosition;
+        int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
+            _collider_buffer, Quaternion.identity);
+
+        for (int i = 0; i < total; i++)
+        {
+            if (_collider_buffer[i].CompareTag("Player"))
+                _collider_buffer[i].GetComponent<HumanPlayer>().GetHit(hitLocation.y, dmg);
+        }
     }
 
     public void GetHit(float height, int damage)
@@ -66,6 +87,10 @@ public class Enemy : Character
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawSphere(transform.position + projectileSpawn[debugSpawn], .2f);
+        if (projectiles.Length > 0)
+        {
+            Gizmos.color = new Color(0f, 1f, 0f, 0.5f);
+            Gizmos.DrawSphere(transform.position + projectileSpawn[debugSpawn], .2f);
+        }
     }
 }

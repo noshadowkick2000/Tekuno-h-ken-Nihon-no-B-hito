@@ -260,8 +260,15 @@ MonoBehaviour:
   curStamina: 0
   maxHealth: 600
   maxStamina: 100
-  isFacingRight: 1
-  blockStaminaCost: 0
+  actionCosts: 000000000000000000000000000000000000000000000000
+  hitHolder:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isFacingForward: 1
+  curDebugHit: 0
+  blockStaminaCost: 50
   highResistance: 0.8
   lowResistance: 0.6
   projectiles:
@@ -1339,8 +1346,6 @@ MonoBehaviour:
   curStamina: 0
   maxHealth: 100
   maxStamina: 1000
-  isFacingRight: 0
-  moveSpeed: 0.1
   actionCosts: 640000005a0000002c0100002c0100006400000064000000
   hitHolder:
   - {fileID: 1621031447}
@@ -1348,7 +1353,9 @@ MonoBehaviour:
   - {fileID: 1055664258}
   - {fileID: 1494853149}
   - {fileID: 1651935671}
+  isFacingForward: 1
   curDebugHit: 4
+  moveSpeed: 0.1
 --- !u!1 &1914858019
 GameObject:
   m_ObjectHideFlags: 0

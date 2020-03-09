@@ -7,6 +7,15 @@ public class Character : MonoBehaviour
     
 #pragma warning disable 0649
     
+        //DOWNWARDS STRIKES HIT HIGH, UPWARDS STRIKES HIT LOW
+    public enum AttackHeight
+    {
+        DownwardsLight = 0,
+        UpwardsLight = 1,
+        DownHeavy = 2,
+        UpwardsHeavy = 3
+    }
+    
     [Header("Connected Scripts")]
     [Header("Non-Serializable")]
     public Animator animator;
@@ -21,9 +30,17 @@ public class Character : MonoBehaviour
     [Header("Serializable")]
     [SerializeField] private int maxHealth;
     [SerializeField] private int maxStamina;
+    
+    [Header("Stamina cost for each type of action")] 
+    [SerializeField] public int[] actionCosts = new int[6];
+
+    [Header("Amount of damage and relative coordinates and sizes of overlap box")] 
+    [SerializeField] public HitHolder[] hitHolder = new HitHolder[4];
 
     [Header("Other")]
     public bool isFacingForward = true;
+    
+    [Header("Debug")] [SerializeField] public int curDebugHit;
     
 #pragma warning restore 0649
     

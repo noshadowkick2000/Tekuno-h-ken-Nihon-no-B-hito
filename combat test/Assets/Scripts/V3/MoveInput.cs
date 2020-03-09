@@ -15,7 +15,7 @@ public class MoveInput : MonoBehaviour
 
     //for double flicking stick
     private float _doubleTapTime;
-    private float _doubleTapInterval = .3f;
+    private float _doubleTapInterval = .35f;
     private bool _leftDown;
     private bool _rightDown;
 

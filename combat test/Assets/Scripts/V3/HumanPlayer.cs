@@ -9,31 +9,19 @@ public class HumanPlayer : Character
 
 #pragma warning disable 0649
 
-    //DOWNWARDS STRIKES HIT HIGH, UPWARDS STRIKES HIT LOW
-    public enum AttackHeight
-    {
-        DownwardsLight = 0,
-        UpwardsLight = 1,
-        DownHeavy = 2,
-        UpwardsHeavy = 3
-    }
-    
     private SwordInput _swordInput;
     private MoveInput _moveInput;
 
     [Header("Movement and Combat")] 
     [SerializeField] private float moveSpeed;
 
-    [Header("Stamina cost for each type of action")] 
-    [SerializeField] private int[] actionCosts = new int[6];
-
-    [Header("Amount of damage and relative coordinates and sizes of overlap box")] 
-    [SerializeField] private HitHolder[] hitHolder = new HitHolder[4];
-
-    [Header("Debug")] [SerializeField] private int curDebugHit;
-
     private bool _canLeftStick = true; //canMove
     private bool _canRightStick = true; //canAttackOrParry
+
+    private bool _defendingHigh = false;
+    private bool _defendingLow = false;
+
+    private SwordInput.Directions _lastDirection;
     
     private Collider[] _collider_buffer = new Collider[10];
 
@@ -59,11 +47,14 @@ public class HumanPlayer : Character
         
         RegenerateStamina(2);
     }
-
+    
     public void SetFree()
     {
         _canLeftStick = true;
         _canRightStick = true;
+
+        _defendingHigh = false;
+        _defendingHigh = false;
         
         animator.ResetTrigger("DashForward");
         animator.ResetTrigger("DashBackward");
@@ -76,6 +67,15 @@ public class HumanPlayer : Character
     {
         _canLeftStick = false;
     }
+
+    //add to attack animations
+    public void StartDefending(bool high)
+    {
+        if (high)
+            _defendingHigh = true;
+        else
+            _defendingLow = true;
+    }
     
     public void SetRolling()
     {
@@ -86,14 +86,19 @@ public class HumanPlayer : Character
     private void UniversalInput()
     {
         if (Input.GetButtonDown("DrawSword"))
-            animator.SetBool("SwordDrawn", !animator.GetBool("SwordDrawn"));
+        {
+            bool swordDrawn = animator.GetBool("SwordDrawn");
+            animator.SetBool("SwordDrawn", !swordDrawn);
+            SetFree();
+            if (swordDrawn)
+                _canRightStick = false;
+        }
     }
 
     private void LeftStickInput()
     {
         float x = _moveInput.GetMoveStick();
         
-        //not working properly yet
         if (_moveInput.DoubleLeft())
         {
             if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
@@ -144,30 +149,10 @@ public class HumanPlayer : Character
 
     private void RightStickInput()
     {
-        //parrying now with attacks
-        /*if (_swordInput.GetDirectionDown(SwordInput.Directions.Up))
-        {
-            if (_canLeftStick)
-            {
-                ResetTriggers();
-                if (UseStamina(actionCosts[(int) SwordInput.Directions.Up]))
-                    animator.SetTrigger("ParryUp");
-            }
-        }
-
-        if (_swordInput.GetDirectionDown(SwordInput.Directions.Down))
-        {
-            if (_canLeftStick)
-            {
-                ResetTriggers();
-                if (UseStamina(actionCosts[(int) SwordInput.Directions.Down]))
-                    animator.SetTrigger("ParryDown");
-            }
-        }*/
-
         if (_swordInput.GetDirectionDown(SwordInput.Directions.LeftUp))
         {
             ResetTriggers();
+            _lastDirection = SwordInput.Directions.LeftUp;
 
             if (!isFacingForward)
             {
@@ -184,6 +169,7 @@ public class HumanPlayer : Character
         if (_swordInput.GetDirectionDown(SwordInput.Directions.LeftDown))
         {
             ResetTriggers();
+            _lastDirection = SwordInput.Directions.LeftDown;
 
             if (!isFacingForward)
             {
@@ -200,6 +186,7 @@ public class HumanPlayer : Character
         if (_swordInput.GetDirectionDown(SwordInput.Directions.RightUp))
         {
             ResetTriggers();
+            _lastDirection = SwordInput.Directions.RightUp;
             
             if (!isFacingForward)
             {
@@ -216,6 +203,7 @@ public class HumanPlayer : Character
         if (_swordInput.GetDirectionDown(SwordInput.Directions.RightDown))
         {
             ResetTriggers();
+            _lastDirection = SwordInput.Directions.RightDown;
             
             if (!isFacingForward)
             {
@@ -264,9 +252,52 @@ public class HumanPlayer : Character
         }
     }
 
-    public void GetHit(int damage, float height)
+    public void GetHit(float height, int damage)
     {
-        Wound(damage);
+        float waistHeight = transform.position.y;
+
+        if (height > waistHeight)
+        {
+            if (_defendingHigh)
+            {
+                animator.SetTrigger("ParryUp");
+                
+                if (isFacingForward)
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackHU" : "AttackLU");
+                }
+                else
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackLU" : "AttackHU");
+                }
+            }
+            else
+            {
+                //animator.SetTrigger("hurtup");
+                Wound((int)(damage));
+            }
+        }
+        else
+        {
+            if (_defendingLow)
+            { 
+                animator.SetTrigger("ParryDown");
+                
+                if (isFacingForward)
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackHD" : "AttackLD");
+                }
+                else
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackLD" : "AttackHD");
+                }
+            }
+            else
+            {
+                //animator.SetTrigger("hurtdown");
+                Wound((int) (damage));
+            }
+        }
     }
 
     private void OnDrawGizmos()

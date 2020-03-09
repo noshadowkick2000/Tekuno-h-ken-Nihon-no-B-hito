@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
-            _player.GetHit(damage, transform.position.y);
+            _player.GetHit(transform.position.y, damage);
         Destroy(gameObject);
     }
 }
