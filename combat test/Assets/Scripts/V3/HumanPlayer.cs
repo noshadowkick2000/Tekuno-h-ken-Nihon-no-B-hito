@@ -20,6 +20,7 @@ public class HumanPlayer : Character
 
     private bool _defendingHigh = false;
     private bool _defendingLow = false;
+    private bool _counterAttack = false;
 
     private SwordInput.Directions _lastDirection;
     
@@ -55,6 +56,7 @@ public class HumanPlayer : Character
 
         _defendingHigh = false;
         _defendingHigh = false;
+        _counterAttack = false;
         
         animator.ResetTrigger("DashForward");
         animator.ResetTrigger("DashBackward");
@@ -68,15 +70,6 @@ public class HumanPlayer : Character
         _canLeftStick = false;
     }
 
-    //add to attack animations
-    public void StartDefending(bool high)
-    {
-        if (high)
-            _defendingHigh = true;
-        else
-            _defendingLow = true;
-    }
-    
     public void SetRolling()
     {
         _canLeftStick = false;
@@ -234,8 +227,10 @@ public class HumanPlayer : Character
         animator.ResetTrigger("AttackHD");
     }
 
-    public void Hit(AttackHeight attack) //corresponds with number in list of HitHolders
+    public void Hit(AttackType attack) //corresponds with number in list of HitHolders
     {
+        SetDefense(attack);
+        
         int dmg = hitHolder[(int) attack].baseDamage;
         Vector3 hitLocation;
         if (isFacingForward)
@@ -252,6 +247,27 @@ public class HumanPlayer : Character
         }
     }
 
+    private void SetDefense(AttackType attackType)
+    {
+        switch (attackType)
+        {
+            case AttackType.UpwardsLight:
+                _defendingLow = true;
+                break;
+            case AttackType.DownwardsLight:
+                _defendingHigh = true;
+                break;
+            case AttackType.UpwardsHeavy:
+                _defendingLow = true;
+                _counterAttack = true;
+                break;
+            case AttackType.DownHeavy:
+                _defendingHigh = true;
+                _counterAttack = true;
+                break;
+        }
+    }
+
     public void GetHit(float height, int damage)
     {
         float waistHeight = transform.position.y;
@@ -260,6 +276,7 @@ public class HumanPlayer : Character
         {
             if (_defendingHigh)
             {
+                print("salsa");
                 animator.SetTrigger("ParryUp");
                 
                 if (isFacingForward)
@@ -270,6 +287,9 @@ public class HumanPlayer : Character
                 {
                     animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackLU" : "AttackHU");
                 }
+                
+                if (_counterAttack)
+                    Hit(AttackType.DownHeavy);
             }
             else
             {
@@ -280,7 +300,8 @@ public class HumanPlayer : Character
         else
         {
             if (_defendingLow)
-            { 
+            {
+                print("tango");
                 animator.SetTrigger("ParryDown");
                 
                 if (isFacingForward)
@@ -291,6 +312,9 @@ public class HumanPlayer : Character
                 {
                     animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackLD" : "AttackHD");
                 }
+                
+                if (_counterAttack)
+                    Hit(AttackType.UpwardsHeavy);
             }
             else
             {

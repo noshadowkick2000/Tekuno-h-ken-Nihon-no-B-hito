@@ -8,7 +8,7 @@ public class Character : MonoBehaviour
 #pragma warning disable 0649
     
         //DOWNWARDS STRIKES HIT HIGH, UPWARDS STRIKES HIT LOW
-    public enum AttackHeight
+    public enum AttackType
     {
         DownwardsLight = 0,
         UpwardsLight = 1,

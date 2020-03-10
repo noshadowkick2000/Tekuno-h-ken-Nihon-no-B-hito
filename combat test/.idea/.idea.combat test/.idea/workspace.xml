@@ -75,11 +75,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Projectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
       </list>
     </option>
   </component>
@@ -200,6 +200,7 @@
       <workItem from="1583766813497" duration="87000" />
       <workItem from="1583771547301" duration="3792000" />
       <workItem from="1583775427901" duration="104000" />
+      <workItem from="1583866476192" duration="2114000" />
     </task>
     <servers />
   </component>

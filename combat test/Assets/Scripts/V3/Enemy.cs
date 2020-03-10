@@ -35,10 +35,13 @@ public class Enemy : Character
     // Update is called once per frame
     void Update()
     {
-        
+        if (isFacingForward)
+            spriteRenderer.flipX = false;
+        else
+            spriteRenderer.flipX = true;
     }
 
-    public void Hit(HumanPlayer.AttackHeight attack)
+    public void Hit(HumanPlayer.AttackType attack)
     {
         int dmg = hitHolder[(int) attack].baseDamage;
         Vector3 hitLocation;
