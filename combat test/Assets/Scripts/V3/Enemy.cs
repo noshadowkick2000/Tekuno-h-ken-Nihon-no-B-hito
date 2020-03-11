@@ -15,6 +15,9 @@ public class Enemy : Character
     public float highResistance; //multiplier of incoming damage depending on height
     [Range(0.0f, 1.0f)] 
     public float lowResistance;
+
+    [Header("Detection of Player")] 
+    [SerializeField] private float maxSightDistance;
     
     [Header("Prefabs for projectiles, if any")]
     [SerializeField] private GameObject[] projectiles;
@@ -24,12 +27,15 @@ public class Enemy : Character
     private Collider[] _collider_buffer = new Collider[10];
 
     private HumanPlayer _player;
+
+    private bool _PlayerInSight = false;
     
 #pragma warning restore 0649
 
     private void Awake()
     {
         Init();
+        _player = FindObjectOfType<HumanPlayer>();
     }
 
     // Update is called once per frame
@@ -39,6 +45,33 @@ public class Enemy : Character
             spriteRenderer.flipX = false;
         else
             spriteRenderer.flipX = true;
+
+        PlayerDetection();
+    }
+
+    private void PlayerDetection()
+    {
+        RaycastHit lineOfSight;
+        Vector3 myPos = transform.position;
+        Vector3 playerDirection = _player.transform.position - myPos;
+
+        _PlayerInSight = false;
+
+        if (Physics.Raycast(myPos, playerDirection, out lineOfSight, maxSightDistance))
+        {
+            if (lineOfSight.transform.CompareTag("Player"))
+                _PlayerInSight = true;
+        }
+
+        if (_PlayerInSight)
+        {
+            isFacingForward = _player.transform.position.x > myPos.x;
+            Debug.DrawRay(myPos, playerDirection, Color.green);
+        }
+        else
+        {
+            Debug.DrawRay(myPos, playerDirection, Color.red);
+        }
     }
 
     public void Hit(HumanPlayer.AttackType attack)

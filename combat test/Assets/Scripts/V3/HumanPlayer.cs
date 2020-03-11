@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Debug = System.Diagnostics.Debug;
 
 public class HumanPlayer : Character
 {
@@ -55,7 +56,7 @@ public class HumanPlayer : Character
         _canRightStick = true;
 
         _defendingHigh = false;
-        _defendingHigh = false;
+        _defendingLow = false;
         _counterAttack = false;
         
         animator.ResetTrigger("DashForward");
@@ -230,6 +231,8 @@ public class HumanPlayer : Character
     public void Hit(AttackType attack) //corresponds with number in list of HitHolders
     {
         SetDefense(attack);
+
+        curDebugHit = (int) attack;
         
         int dmg = hitHolder[(int) attack].baseDamage;
         Vector3 hitLocation;
@@ -252,17 +255,17 @@ public class HumanPlayer : Character
         switch (attackType)
         {
             case AttackType.UpwardsLight:
-                _defendingLow = true;
-                break;
-            case AttackType.DownwardsLight:
                 _defendingHigh = true;
                 break;
-            case AttackType.UpwardsHeavy:
+            case AttackType.DownwardsLight:
                 _defendingLow = true;
+                break;
+            case AttackType.UpwardsHeavy:
+                _defendingHigh = true;
                 _counterAttack = true;
                 break;
             case AttackType.DownHeavy:
-                _defendingHigh = true;
+                _defendingLow = true;
                 _counterAttack = true;
                 break;
         }
@@ -285,7 +288,7 @@ public class HumanPlayer : Character
                 }
                 else
                 {
-                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackLU" : "AttackHU");
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.RightUp ? "AttackLU" : "AttackHU");
                 }
                 
                 if (_counterAttack)
@@ -306,11 +309,11 @@ public class HumanPlayer : Character
                 
                 if (isFacingForward)
                 {
-                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackHD" : "AttackLD");
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftDown ? "AttackHD" : "AttackLD");
                 }
                 else
                 {
-                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackLD" : "AttackHD");
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.RightDown ? "AttackLD" : "AttackHD");
                 }
                 
                 if (_counterAttack)
