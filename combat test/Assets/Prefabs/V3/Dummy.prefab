@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6629858048177347205}
   - component: {fileID: 6629858048177347204}
   - component: {fileID: 6629858048177347202}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dummy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,10 +154,23 @@ MonoBehaviour:
   curStamina: 0
   maxHealth: 1000
   maxStamina: 0
-  isFacingRight: 1
+  actionCosts: 000000000000000000000000000000000000000000000000
+  hitHolder:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isFacingForward: 1
+  curDebugHit: 0
   blockStaminaCost: 0
   highResistance: 0.8
   lowResistance: 1
+  maxSightDistance: 10
+  projectiles: []
+  projectileSpawn: []
+  debugSpawn: 0
+  player: {fileID: 0}
+  playerInSight: 0
 --- !u!114 &6629858048177347202
 MonoBehaviour:
   m_ObjectHideFlags: 0

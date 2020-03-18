@@ -28,18 +28,19 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Input/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Anchor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -78,8 +79,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/MoveInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Boolean.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Anchor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/AnimationMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/HitHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -112,10 +122,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="13248">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="16212">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13248" />
+      <option name="pid" value="16212" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -204,6 +214,22 @@
       <workItem from="1583873783020" duration="2318000" />
       <workItem from="1583927119126" duration="1448000" />
       <workItem from="1583937332309" duration="942000" />
+      <workItem from="1584102775173" duration="1468000" />
+      <workItem from="1584116497773" duration="600000" />
+      <workItem from="1584141190993" duration="1480000" />
+      <workItem from="1584221108028" duration="751000" />
+      <workItem from="1584299938584" duration="142000" />
+      <workItem from="1584357378105" duration="523000" />
+      <workItem from="1584358309097" duration="9954000" />
+      <workItem from="1584382474008" duration="3297000" />
+      <workItem from="1584389126372" duration="1337000" />
+      <workItem from="1584399442046" duration="3261000" />
+      <workItem from="1584404834212" duration="109000" />
+      <workItem from="1584447531365" duration="2175000" />
+      <workItem from="1584464589037" duration="809000" />
+      <workItem from="1584468386021" duration="1976000" />
+      <workItem from="1584476865918" duration="4198000" />
+      <workItem from="1584536327539" duration="2505000" />
     </task>
     <servers />
   </component>
