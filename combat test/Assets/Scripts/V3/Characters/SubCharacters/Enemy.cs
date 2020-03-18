@@ -82,19 +82,19 @@ public class Enemy : Character
     public void Hit(HumanPlayer.AttackType attack)
     {
         int dmg = hitHolder[(int) attack].baseDamage;
-        Vector3 hitLocation;
         if (isFacingForward)
             hitHolders.transform.localRotation = new Quaternion();
         else
             hitHolders.transform.localRotation = Quaternion.Euler(0, 180, 0);
-        hitLocation = hitHolder[(int) attack].position;
+        Vector3 hitLocation = hitHolder[(int) attack].position;
         int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
             _collider_buffer, Quaternion.identity);
 
         for (int i = 0; i < total; i++)
         {
             if (_collider_buffer[i].CompareTag("Player"))
-                _collider_buffer[i].GetComponent<HumanPlayer>().GetHit(hitLocation.y, dmg);
+                if (!_collider_buffer[i].GetComponent<HumanPlayer>().GetHit(hitLocation.y, dmg))
+                    animator.SetTrigger("parry");
         }
     }
 
@@ -116,7 +116,7 @@ public class Enemy : Character
             }
             else
             {
-                animator.SetTrigger("hurtdown");
+                animator.SetTrigger("hurtup");
                 Wound((int)(damage*lowResistance));
             }   
         }

@@ -71,7 +71,8 @@ public class HumanPlayer : Character
         _canLeftStick = false;
         _canRightStick = false;
         
-        SetDefense(attack);
+        if (attack == AttackType.LD || attack == AttackType.LU)
+            SetDefense(attack);
     }
 
     public void SetRolling()
@@ -241,12 +242,11 @@ public class HumanPlayer : Character
         curDebugHit = (int) attack;
         
         int dmg = hitHolder[(int) attack].baseDamage;
-        Vector3 hitLocation;
         if (isFacingForward)
             hitHolders.transform.localRotation = new Quaternion();
         else
             hitHolders.transform.localRotation = Quaternion.Euler(0, 180, 0);
-        hitLocation = hitHolder[(int) attack].position;
+        Vector3 hitLocation = hitHolder[(int) attack].position;
         int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
             _collider_buffer, Quaternion.identity);
 
@@ -255,6 +255,9 @@ public class HumanPlayer : Character
             if (_collider_buffer[i].CompareTag("Enemy"))
                 _collider_buffer[i].GetComponent<Enemy>().GetHit(hitLocation.y, dmg);
         }
+        
+        if (attack == AttackType.HD || attack == AttackType.HU)
+            SetDefense(attack);
     }
 
     private void SetDefense(AttackType attackType)
@@ -286,7 +289,6 @@ public class HumanPlayer : Character
         {
             if (_defendingHigh)
             {
-                print("salsa");
                 animator.SetTrigger("ParryUp");
                 
                 if (isFacingForward)
@@ -307,7 +309,15 @@ public class HumanPlayer : Character
             {
                 //animator.SetTrigger("hurtup");
                 Wound(damage);
-
+                animator.SetTrigger("Hurt");
+                if (isFacingForward)
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackHU" : "AttackLU");
+                }
+                else
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.RightUp ? "AttackLU" : "AttackHU");
+                }
                 return true;
             }
         }
@@ -315,7 +325,6 @@ public class HumanPlayer : Character
         {
             if (_defendingLow)
             {
-                print("tango");
                 animator.SetTrigger("ParryDown");
                 
                 if (isFacingForward)
@@ -336,7 +345,15 @@ public class HumanPlayer : Character
             {
                 //animator.SetTrigger("hurtdown");
                 Wound(damage);
-
+                animator.SetTrigger("Hurt");
+                if (isFacingForward)
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftDown ? "AttackHD" : "AttackLD");
+                }
+                else
+                {
+                    animator.SetTrigger(_lastDirection == SwordInput.Directions.RightDown ? "AttackLD" : "AttackHD");
+                }
                 return true;
             }
         }

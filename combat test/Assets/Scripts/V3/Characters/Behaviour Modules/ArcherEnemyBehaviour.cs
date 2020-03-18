@@ -24,6 +24,8 @@ public class ArcherEnemyBehaviour : MonoBehaviour
     private Anchor _lastAnchor;
     private bool _hasLastAnchor;
 
+    private bool _regenerating;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,6 @@ public class ArcherEnemyBehaviour : MonoBehaviour
         {
             if (_curPlayerDistance <= engagedRange)
             {
-                print(transform.position);
                 MoveTree();
             }
             else if (_enemy.curStamina == 0)
@@ -59,9 +60,7 @@ public class ArcherEnemyBehaviour : MonoBehaviour
                 {
                     _enemy.animator.SetBool("inrange", false);
                 }
-                
-                _enemy.RegenerateStamina(10);
-                
+
                 //temp solution
                 transform.position = new Vector3(transform.position.x, transform.position.y, 0);
             }
@@ -69,7 +68,6 @@ public class ArcherEnemyBehaviour : MonoBehaviour
             {
                 if (_curPlayerDistance <= engagedRange)
                 {
-                    print("road2tree");
                     MoveTree();
                 }
             }
@@ -91,6 +89,15 @@ public class ArcherEnemyBehaviour : MonoBehaviour
         _startTime = Time.time;
         _endTime = _startTime + transitionTime;
         _startPosition = transform.position;
+
+        temp.occupied = true;
+        
+        if (_hasLastAnchor)
+            _lastAnchor.occupied = false;
+        else
+            _hasLastAnchor = true;
+
+        _lastAnchor = temp;
     }
 
     void MoveRoad()
@@ -105,14 +112,15 @@ public class ArcherEnemyBehaviour : MonoBehaviour
         _startTime = Time.time;
         _endTime = _startTime + transitionTime;
         _startPosition = transform.position;
+
+        _lastAnchor.occupied = false;
+        _hasLastAnchor = false;
     }
 
     void StopMove()
     {
         _moving = false;
         GetComponent<CapsuleCollider>().enabled = true;
-        
-        print(transform.position);
 
         if (_hiding)
         {
@@ -141,5 +149,22 @@ public class ArcherEnemyBehaviour : MonoBehaviour
         newPos.z = 0;
 
         return newPos;
+    }
+
+    //call as event in animation
+    public void StaminaRegen()
+    {
+        if (!_regenerating)
+        {
+            StartCoroutine(Restamina());
+            _regenerating = true;
+        }
+    }
+
+    private IEnumerator Restamina()
+    {
+        yield return new WaitForSeconds(5);
+        _enemy.RegenerateStamina(_enemy.maxHealth/4);
+        _regenerating = false;
     }
 }
