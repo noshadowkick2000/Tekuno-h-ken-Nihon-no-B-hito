@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\V2\TimingState.cs" />
      <Compile Include="Assets\Scripts\V2\TriggerScript.cs" />
      <Compile Include="Assets\Scripts\V3\Anchor.cs" />
+     <Compile Include="Assets\Scripts\V3\CameraTemp.cs" />
      <Compile Include="Assets\Scripts\V3\Characters\Additional Modules\AnimationMover.cs" />
      <Compile Include="Assets\Scripts\V3\Characters\Additional Modules\HitHolder.cs" />
      <Compile Include="Assets\Scripts\V3\Characters\Behaviour Modules\ArcherEnemyBehaviour.cs" />

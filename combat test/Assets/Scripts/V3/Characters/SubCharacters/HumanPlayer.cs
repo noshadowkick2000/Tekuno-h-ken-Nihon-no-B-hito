@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Windows.WebCam;
 using Debug = System.Diagnostics.Debug;
 
 public class HumanPlayer : Character
@@ -27,6 +29,12 @@ public class HumanPlayer : Character
     
     private Collider[] _collider_buffer = new Collider[10];
 
+    //temp
+    [SerializeField] private AudioClip _oof;
+    [SerializeField] private AudioClip _swoosh;
+    [SerializeField] private AudioClip _counter;
+    private AudioSource _audioSource;
+
 #pragma warning restore 0649
     
     // Start is called before the first frame update
@@ -35,6 +43,9 @@ public class HumanPlayer : Character
         Init();
         _swordInput = FindObjectOfType<SwordInput>();
         _moveInput = FindObjectOfType<MoveInput>();
+
+        //temp
+        _audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +79,10 @@ public class HumanPlayer : Character
 
     public void SetAttacking(AttackType attack)
     {
+        //temp
+        _audioSource.clip = _swoosh;
+        _audioSource.Play();
+        
         _canLeftStick = false;
         _canRightStick = false;
         
@@ -97,15 +112,20 @@ public class HumanPlayer : Character
     {
         float x = _moveInput.GetMoveStick();
         
-        if (_moveInput.DoubleLeft())
+        if (_moveInput.DodgeLeft())
         {
             if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
                 animator.SetTrigger(isFacingForward ? "DashBackward" : "DashForward");
         }
-        else if (_moveInput.DoubleRight())
+        else if (_moveInput.DodgeRight())
         {
             if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
                 animator.SetTrigger(isFacingForward ? "DashForward" : "DashBackward");
+        }
+        else if (_moveInput.RightTriggerDown())
+        {
+            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
+                animator.SetTrigger("DashBackward");
         }
         
         if (x == 0)
@@ -248,7 +268,7 @@ public class HumanPlayer : Character
             hitHolders.transform.localRotation = Quaternion.Euler(0, 180, 0);
         Vector3 hitLocation = hitHolder[(int) attack].position;
         int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
-            _collider_buffer, Quaternion.identity);
+            _collider_buffer, Quaternion.identity, ~9);
 
         for (int i = 0; i < total; i++)
         {
@@ -302,23 +322,12 @@ public class HumanPlayer : Character
                 
                 if (_counterAttack)
                     Hit(AttackType.HU);
+                
+                //temp
+                _audioSource.clip = _counter;
+                _audioSource.Play();
 
                 return false;
-            }
-            else
-            {
-                //animator.SetTrigger("hurtup");
-                Wound(damage);
-                animator.SetTrigger("Hurt");
-                if (isFacingForward)
-                {
-                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftUp ? "AttackHU" : "AttackLU");
-                }
-                else
-                {
-                    animator.SetTrigger(_lastDirection == SwordInput.Directions.RightUp ? "AttackLU" : "AttackHU");
-                }
-                return true;
             }
         }
         else
@@ -338,24 +347,39 @@ public class HumanPlayer : Character
                 
                 if (_counterAttack)
                     Hit(AttackType.HD);
+                
+                //temp
+                _audioSource.clip = _counter;
+                _audioSource.Play();
 
                 return false;
             }
-            else
-            {
-                //animator.SetTrigger("hurtdown");
-                Wound(damage);
-                animator.SetTrigger("Hurt");
-                if (isFacingForward)
-                {
-                    animator.SetTrigger(_lastDirection == SwordInput.Directions.LeftDown ? "AttackHD" : "AttackLD");
-                }
-                else
-                {
-                    animator.SetTrigger(_lastDirection == SwordInput.Directions.RightDown ? "AttackLD" : "AttackHD");
-                }
-                return true;
-            }
         }
+        
+        //animator.SetTrigger("hurtdown");
+            Wound(damage);
+            animator.SetTrigger("Hurt");
+            
+            switch (_lastDirection)
+            {
+                case SwordInput.Directions.LeftUp:
+                    animator.SetTrigger(isFacingForward ? "AttackHU" : "AttackLU");
+                    break;
+                case SwordInput.Directions.RightUp:
+                    animator.SetTrigger(isFacingForward ? "AttackLU" : "AttackHU");
+                    break;
+                case SwordInput.Directions.LeftDown:
+                    animator.SetTrigger(isFacingForward ? "AttackHD" : "AttackLD");
+                    break;
+                case SwordInput.Directions.RightDown:
+                    animator.SetTrigger(isFacingForward ? "AttackLD" : "AttackHD");
+                    break;
+            }
+
+                //temp
+            _audioSource.clip = _oof;
+            _audioSource.Play();
+                
+            return true;
     }
 }

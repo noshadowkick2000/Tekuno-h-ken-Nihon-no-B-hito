@@ -37,6 +37,7 @@
           </e>
           <e p="V3" t="Include">
             <e p="Anchor.cs" t="Include" />
+            <e p="CameraTemp.cs" t="Include" />
             <e p="Characters" t="Include">
               <e p="Additional Modules" t="Include">
                 <e p="AnimationMover.cs" t="Include" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class Character : MonoBehaviour
     [SerializeField] public int maxHealth;
     [SerializeField] public int maxStamina;
     
+    [Header("Health and Stamina bar")]
+    [SerializeField] private Image healthBar;
+    [SerializeField] private Image staminaBar;
+    
     [Header("Stamina cost for each type of action")] 
     [SerializeField] public int[] actionCosts = new int[6];
 
@@ -58,11 +63,19 @@ public class Character : MonoBehaviour
     public void Wound(int damageAmount)
     {
         curHealth -= damageAmount;
+        if (curHealth < 0)
+            curHealth = 0;
+        
+        UpdateHealthBar();
     }
 
     public void Heal(int healAmount)
     {
         curHealth += healAmount;
+        if (curHealth > maxHealth)
+            curHealth = maxHealth;
+
+        UpdateHealthBar();
     }
 
     public bool UseStamina(int amount) //when called if true allow for action and drain stamina
@@ -71,6 +84,7 @@ public class Character : MonoBehaviour
         if (newStamina < 0)
             return false;
         curStamina = newStamina;
+        UpdateStaminaBar();
         return true;
     }
 
@@ -79,14 +93,26 @@ public class Character : MonoBehaviour
         curStamina -= amount;
         if (curStamina < 0)
             curStamina = 0;
+        
+        UpdateStaminaBar();
     }
 
     public void RegenerateStamina(int amount)
     {
-        int newStamina = curStamina + amount;
-        if (newStamina > maxStamina)
+        curStamina = curStamina + amount;
+        if (curStamina > maxStamina)
             curStamina = maxStamina;
-        else
-            curStamina = newStamina;
+
+        UpdateStaminaBar();
+    }
+
+    private void UpdateStaminaBar()
+    {
+        staminaBar.fillAmount = (float)curStamina / maxStamina;
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.fillAmount = (float)curHealth / maxHealth;
     }
 }

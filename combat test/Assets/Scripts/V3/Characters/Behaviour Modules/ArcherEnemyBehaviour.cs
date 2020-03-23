@@ -60,16 +60,10 @@ public class ArcherEnemyBehaviour : MonoBehaviour
                 {
                     _enemy.animator.SetBool("inrange", false);
                 }
-
-                //temp solution
-                transform.position = new Vector3(transform.position.x, transform.position.y, 0);
             }
             else
             {
-                if (_curPlayerDistance <= engagedRange)
-                {
-                    MoveTree();
-                }
+                MoveTree();
             }
         }
         else if (_moving)
@@ -163,8 +157,8 @@ public class ArcherEnemyBehaviour : MonoBehaviour
 
     private IEnumerator Restamina()
     {
-        yield return new WaitForSeconds(5);
-        _enemy.RegenerateStamina(_enemy.maxHealth/4);
+        yield return new WaitForSeconds(2);
+        _enemy.RegenerateStamina(_enemy.maxStamina/4);
         _regenerating = false;
     }
 }

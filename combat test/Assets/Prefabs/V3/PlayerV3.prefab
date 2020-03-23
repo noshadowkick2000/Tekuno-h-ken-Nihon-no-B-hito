@@ -205,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2899732090726083919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2899732091613817873}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 10
   position: {x: 0, y: 0, z: 0}
-  halfSize: {x: 0.5, y: 0.89, z: 0.5}
+  halfSize: {x: 0.7, y: 0.89, z: 0.5}
 --- !u!1 &2899732090763951661
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +383,8 @@ MonoBehaviour:
   curStamina: 0
   maxHealth: 100
   maxStamina: 1000
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
   actionCosts: 640000005a0000002c0100002c0100006400000064000000
   hitHolder:
   - {fileID: 2899732090726083918}
@@ -394,6 +396,9 @@ MonoBehaviour:
   isFacingForward: 1
   curDebugHit: 4
   moveSpeed: 0.1
+  _oof: {fileID: 8300000, guid: e2e598cc5fb60d245a1398d6ddc96489, type: 3}
+  _swoosh: {fileID: 8300000, guid: 4f03bb2c8dd981c4e97d420ac41e8885, type: 3}
+  _counter: {fileID: 8300000, guid: 2da091a19cabbfa4cbcfc8a860b021b8, type: 3}
 --- !u!114 &2899732090763951651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,7 +483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2899732091180062769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2899732091613817873}
@@ -498,7 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 10
   position: {x: 0, y: 0, z: 0}
-  halfSize: {x: 0.5, y: 0.89, z: 0.5}
+  halfSize: {x: 0.7, y: 0.89, z: 0.5}
 --- !u!1 &2899732091437957081
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,10 +14,19 @@ public class MoveInput : MonoBehaviour
     private int _counterTreshold = 7;
 
     //for double flicking stick
-    private float _doubleTapTime;
+    /*private float _doubleTapTime;
     private float _doubleTapInterval = .35f;
     private bool _leftDown;
-    private bool _rightDown;
+    private bool _rightDown;*/
+    
+    //right trigger
+    private float _rightTriggerLast;
+    private float _rightTriggerCurrent;
+    private bool _rightTriggerDown;
+    
+    //dodging
+    private bool _dodgeLeft;
+    private bool _dodgeRight;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +50,7 @@ public class MoveInput : MonoBehaviour
             _leftHoldCounter = 0;
         }
 
-        _leftDown = false;
+        /*_leftDown = false;
         _rightDown = false;
         
         if (LeftDown())
@@ -59,6 +68,21 @@ public class MoveInput : MonoBehaviour
                 _rightDown = true;
             }
             _doubleTapTime = Time.time;
+        }*/
+
+        _rightTriggerLast = _rightTriggerCurrent;
+        _rightTriggerCurrent = Input.GetAxis("Dash");
+        _rightTriggerDown = false;
+        _dodgeLeft = false;
+        _dodgeRight = false;
+
+        if (_curX>0 &&  RightTriggerDown())
+        {
+             _dodgeRight = true;
+        }
+        else if (_curX<0 && RightTriggerDown())
+        {
+            _dodgeLeft = true;
         }
     }
 
@@ -86,8 +110,13 @@ public class MoveInput : MonoBehaviour
     {
         return _curX == 1 && _oldX < 1;
     }
+    
+    public bool RightTriggerDown()
+    {
+        return _rightTriggerCurrent == 1 && _rightTriggerLast != 1;
+    }
 
-    public bool DoubleLeft()
+    /*public bool DoubleLeft()
     {
         return _leftDown;
     }
@@ -95,5 +124,15 @@ public class MoveInput : MonoBehaviour
     public bool DoubleRight()
     {
         return _rightDown;
+    }*/
+
+    public bool DodgeLeft()
+    {
+        return _dodgeLeft;
+    }
+
+    public bool DodgeRight()
+    {
+        return _dodgeRight;
     }
 }

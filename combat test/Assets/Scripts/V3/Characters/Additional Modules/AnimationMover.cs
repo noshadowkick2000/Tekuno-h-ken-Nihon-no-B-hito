@@ -25,11 +25,13 @@ public class AnimationMover : MonoBehaviour
             Vector3 curPosition = _character.rigidBody.position;
             if (_facingRight)
             {
-                _character.rigidBody.MovePosition(new Vector3(_baseValue, curPosition.y, curPosition.z) + new Vector3(currentValue, 0, 0));
+                //TEMP CHANGED Z VALUES TO 0
+                _character.rigidBody.MovePosition(new Vector3(_baseValue, curPosition.y, 0) + new Vector3(currentValue, 0, 0));
             }
             else
             {
-                _character.rigidBody.MovePosition(new Vector3(_baseValue, curPosition.y, curPosition.z) - new Vector3(currentValue, 0, 0));
+                //TEMP CHANGED Z VALUES TO 0
+                _character.rigidBody.MovePosition(new Vector3(_baseValue, curPosition.y, 0) - new Vector3(currentValue, 0, 0));
             }
         }
     }

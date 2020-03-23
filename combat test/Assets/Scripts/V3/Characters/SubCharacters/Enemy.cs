@@ -30,20 +30,34 @@ public class Enemy : Character
 
     public bool playerInSight = false;
     
+    //temp
+    [SerializeField] private AudioClip _oof;
+    [SerializeField] private AudioClip _swoosh;
+    [SerializeField] private AudioClip _counter;
+    [SerializeField] private AudioClip _arrow;
+    private AudioSource _audioSource;
+    
 #pragma warning restore 0649
 
     private void Awake()
     {
         Init();
         player = FindObjectOfType<HumanPlayer>();
+        
+        //temp
+        _audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (curHealth<=0)
+        if (curHealth <= 0)
+        {
             animator.SetTrigger("die");
-        
+            gameObject.layer = 0;
+            Destroy(this);
+        }
+
         if (isFacingForward)
             spriteRenderer.flipX = false;
         else
@@ -88,7 +102,7 @@ public class Enemy : Character
             hitHolders.transform.localRotation = Quaternion.Euler(0, 180, 0);
         Vector3 hitLocation = hitHolder[(int) attack].position;
         int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
-            _collider_buffer, Quaternion.identity);
+            _collider_buffer, Quaternion.identity, ~9);
 
         for (int i = 0; i < total; i++)
         {
@@ -96,6 +110,10 @@ public class Enemy : Character
                 if (!_collider_buffer[i].GetComponent<HumanPlayer>().GetHit(hitLocation.y, dmg))
                     animator.SetTrigger("parry");
         }
+        
+        //temp
+        _audioSource.clip = _swoosh;
+        _audioSource.Play();
     }
 
     public void GetHit(float height, int damage)
@@ -106,6 +124,10 @@ public class Enemy : Character
         {
             OverrideUseStamina((blockStaminaCost*damage));
             animator.SetTrigger("parry");
+            
+            //temp
+            _audioSource.clip = _counter;
+            _audioSource.Play();
         }
         else
         {
@@ -119,6 +141,10 @@ public class Enemy : Character
                 animator.SetTrigger("hurtup");
                 Wound((int)(damage*lowResistance));
             }   
+            
+            //temp
+            _audioSource.clip = _oof;
+            _audioSource.Play();
         }
     }
 
@@ -130,6 +156,10 @@ public class Enemy : Character
         else
             temp = Instantiate(projectiles[projectile], transform.position - projectileSpawn[projectile], transform.rotation);
         temp.GetComponent<Projectile>().SetReflectDestination(transform.position);
+        
+        //temp
+        _audioSource.clip = _arrow;
+        _audioSource.Play();
     }
 
     private void OnDrawGizmosSelected()
