@@ -24,6 +24,9 @@ public class Enemy : Character
     [SerializeField] private Vector3[] projectileSpawn;
     [SerializeField] private int debugSpawn;
 
+    [Header("Dead Prefab")] 
+    [SerializeField] private GameObject deadGameObject;
+
     private Collider[] _collider_buffer = new Collider[10];
 
     public HumanPlayer player;
@@ -53,9 +56,8 @@ public class Enemy : Character
     {
         if (curHealth <= 0)
         {
-            animator.SetTrigger("die");
-            gameObject.layer = 0;
-            Destroy(this);
+            Instantiate(deadGameObject, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
         if (isFacingForward)
