@@ -309,6 +309,7 @@ public class HumanPlayer : Character
         {
             if (_defendingHigh)
             {
+                _defendingHigh = false;
                 animator.SetTrigger("ParryUp");
                 
                 if (isFacingForward)
@@ -334,6 +335,7 @@ public class HumanPlayer : Character
         {
             if (_defendingLow)
             {
+                _defendingLow = false;
                 animator.SetTrigger("ParryDown");
                 
                 if (isFacingForward)

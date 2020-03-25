@@ -92,8 +92,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/MoveInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
       </list>
     </option>
   </component>
@@ -242,6 +242,7 @@
       <workItem from="1584992975520" duration="960000" />
       <workItem from="1585056709824" duration="278000" />
       <workItem from="1585071449437" duration="184000" />
+      <workItem from="1585145173470" duration="176000" />
     </task>
     <servers />
   </component>
