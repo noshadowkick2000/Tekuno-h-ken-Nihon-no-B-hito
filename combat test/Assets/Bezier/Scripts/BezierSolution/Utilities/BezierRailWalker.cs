@@ -793,6 +793,11 @@ namespace BezierSolution
     public bool animating;
     private AnimationMover _animationMover;
 
+    public Vector3 GetMoveClosestSpline(Vector3 otherLocation)
+    {
+      return spline.FindNearestPointTo(otherLocation, out m_normalizedT);
+    }
+
   } // class
 }
  

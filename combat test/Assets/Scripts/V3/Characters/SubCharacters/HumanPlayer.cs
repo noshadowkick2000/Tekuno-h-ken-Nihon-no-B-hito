@@ -273,7 +273,7 @@ public class HumanPlayer : Character
             hitHolders.transform.localRotation = Quaternion.Euler(0, 180, 0);
         Vector3 hitLocation = hitHolder[(int) attack].position;
         int total = Physics.OverlapBoxNonAlloc(hitLocation, hitHolder[(int) attack].halfSize,
-            _collider_buffer, Quaternion.identity, ~9);
+            _collider_buffer, Quaternion.identity, 512);
 
         for (int i = 0; i < total; i++)
         {

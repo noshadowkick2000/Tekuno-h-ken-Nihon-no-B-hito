@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using BezierSolution;
 using UnityEngine;
 
 public class ArcherEnemyBehaviour : MonoBehaviour
@@ -26,10 +27,15 @@ public class ArcherEnemyBehaviour : MonoBehaviour
 
     private bool _regenerating;
 
+    private BezierRailWalker _bezierRailWalker;
+    private Vector3 _parentOffset;
+
     // Start is called before the first frame update
     void Start()
     {
         _enemy = GetComponent<Enemy>();
+        _bezierRailWalker = GetComponentInParent<BezierRailWalker>();
+        _parentOffset = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -139,8 +145,7 @@ public class ArcherEnemyBehaviour : MonoBehaviour
     //change later for spline
     Vector3 FindClosestSpline()
     {
-        Vector3 newPos = transform.position;
-        newPos.z = 0;
+        Vector3 newPos = _bezierRailWalker.GetMoveClosestSpline(transform.position) + _parentOffset;
 
         return newPos;
     }
