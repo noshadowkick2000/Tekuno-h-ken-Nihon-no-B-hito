@@ -25,7 +25,7 @@ public class HumanPlayer : Character
     private bool _defendingLow = false;
     private bool _counterAttack = false;
 
-    private SwordInput.Directions _lastDirection;
+    private SwordInput.Directions _lastDirection = SwordInput.Directions.LeftUp;
     
     private Collider[] _collider_buffer = new Collider[10];
 
@@ -64,6 +64,8 @@ public class HumanPlayer : Character
     public void SetFree()
     {
         _canLeftStick = true;
+        //temp movinput.active shadows canleftstick
+        _moveInput.active = true;
         _canRightStick = true;
 
         _defendingHigh = false;
@@ -84,6 +86,8 @@ public class HumanPlayer : Character
         _audioSource.Play();
         
         _canLeftStick = false;
+        //temp
+        _moveInput.active = false;
         _canRightStick = false;
         
         if (attack == AttackType.LD || attack == AttackType.LU)
@@ -110,7 +114,7 @@ public class HumanPlayer : Character
 
     private void LeftStickInput()
     {
-        float x = _moveInput.GetMoveStick();
+        float x = _moveInput.GetMoveHorizontal();
         
         if (_moveInput.DodgeLeft())
         {
@@ -162,10 +166,11 @@ public class HumanPlayer : Character
         else
             spriteRenderer.flipX = false;
 
-        rigidBody.MovePosition(rigidBody.position + new Vector3(x*moveSpeed, 0, 0));
+        //now is done by bezier movement
+        //rigidBody.MovePosition(rigidBody.position + new Vector3(x*moveSpeed, 0, 0));
 
         //temp solution
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
     private void RightStickInput()

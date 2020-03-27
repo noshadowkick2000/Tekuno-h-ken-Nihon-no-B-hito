@@ -29,16 +29,22 @@
     <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Input/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Anchor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Input/MoveInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierPhysicsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/SpriteLookAt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/CameraTemp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/Utilities/BezierRailWalker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/BezierSpline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
@@ -47,7 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/statelable.cs" />
         <option value="$PROJECT_DIR$/Assets/ColliderAdder.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/ShadowCaster.cs" />
@@ -88,12 +93,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/HitHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/CameraTemp.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/AnimationMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/MoveInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/InputHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/BezierPhysicsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/PlayerControls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/MoveInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/Utilities/BezierRailWalker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/BezierSpline.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/AnimationMover.cs" />
       </list>
     </option>
   </component>
@@ -243,6 +253,11 @@
       <workItem from="1585056709824" duration="278000" />
       <workItem from="1585071449437" duration="184000" />
       <workItem from="1585145173470" duration="176000" />
+      <workItem from="1585145871240" duration="135000" />
+      <workItem from="1585156149036" duration="6630000" />
+      <workItem from="1585225663051" duration="1053000" />
+      <workItem from="1585236259084" duration="3016000" />
+      <workItem from="1585306433651" duration="5723000" />
     </task>
     <servers />
   </component>

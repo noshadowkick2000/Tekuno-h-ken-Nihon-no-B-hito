@@ -1,50 +1,47 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using BezierSolution;
 using UnityEngine;
 
 public class AnimationMover : MonoBehaviour
 {
+    private Rigidbody _rigidBody;
     private Character _character;
+    private BezierRailWalker _bezierRailWalker;
 
     private bool _inAnimation;
     [SerializeField] private float currentValue;
-    private float _baseValue;
+    public float baseValue;
     private bool _facingRight; //need to use value set at start of animation
 
     private void Awake()
     {
+        _rigidBody = GetComponentInParent<Rigidbody>();
         _character = GetComponent<Character>();
+        _bezierRailWalker = GetComponentInParent<BezierRailWalker>();
     }
 
     // Update is called once per frame
-    void Update()
+    public float GetDelta()
     {
-        if (_inAnimation)
-        {
-            Vector3 curPosition = _character.rigidBody.position;
-            if (_facingRight)
-            {
-                //TEMP CHANGED Z VALUES TO 0
-                _character.rigidBody.MovePosition(new Vector3(_baseValue, curPosition.y, 0) + new Vector3(currentValue, 0, 0));
-            }
-            else
-            {
-                //TEMP CHANGED Z VALUES TO 0
-                _character.rigidBody.MovePosition(new Vector3(_baseValue, curPosition.y, 0) - new Vector3(currentValue, 0, 0));
-            }
-        }
+        if (_facingRight)
+            return currentValue / 2;
+        else
+            return -(currentValue / 2);
     }
 
     public void StartAnimationMove()
     {
         _inAnimation = true;
-        _baseValue = _character.rigidBody.position.x;
+        _bezierRailWalker.animating = _inAnimation;
+        baseValue = _bezierRailWalker.NormalizedT;
         _facingRight = _character.isFacingForward;
     }
     
     public void ReleaseAnimationMove()
     {
         _inAnimation = false;
+        _bezierRailWalker.animating = _inAnimation;
     }
 }
