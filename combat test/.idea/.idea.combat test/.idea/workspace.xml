@@ -103,11 +103,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V2/TimingMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V2/InputMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V2/EnemyMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/SwordInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -267,6 +267,7 @@
       <workItem from="1585507323660" duration="979000" />
       <workItem from="1585508330611" duration="122000" />
       <workItem from="1585512495456" duration="1320000" />
+      <workItem from="1585519120006" duration="2278000" />
     </task>
     <servers />
   </component>

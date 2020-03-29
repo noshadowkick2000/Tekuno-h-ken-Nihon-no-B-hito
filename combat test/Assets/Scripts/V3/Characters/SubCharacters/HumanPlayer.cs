@@ -124,22 +124,6 @@ public class HumanPlayer : Character
     {
         float x = _moveInput.GetMoveHorizontal();
         
-        if (_moveInput.DodgeLeft())
-        {
-            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
-                animator.SetTrigger(isFacingForward ? "DashBackward" : "DashForward");
-        }
-        else if (_moveInput.DodgeRight())
-        {
-            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
-                animator.SetTrigger(isFacingForward ? "DashForward" : "DashBackward");
-        }
-        else if (_moveInput.RightTriggerDown())
-        {
-            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
-                animator.SetTrigger("DashBackward");
-        }
-        
         if (x == 0)
             animator.SetTrigger("StopMove");
         else
@@ -158,6 +142,24 @@ public class HumanPlayer : Character
                 else
                     animator.SetTrigger("MoveForward");
             }
+        }
+        
+        if (_moveInput.DodgeLeft())
+        {
+            isFacingForward = false;
+            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
+                animator.SetTrigger("DashForward");
+        }
+        else if (_moveInput.DodgeRight())
+        {
+            isFacingForward = true;
+            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
+                animator.SetTrigger("DashForward");
+        }
+        else if (_moveInput.RightTriggerDown())
+        {
+            if (UseStamina(actionCosts[(int) SwordInput.Directions.Dash]))
+                animator.SetTrigger("DashBackward");
         }
 
         if (_moveInput.HoldRight())

@@ -166,20 +166,20 @@ public class ArcherEnemyBehaviour : MonoBehaviour
 
     private IEnumerator Restamina()
     {
-        yield return new WaitForSeconds(1);
-        _enemy.RegenerateStamina(_enemy.maxStamina/5);
+        yield return new WaitForSeconds(5);
+        _enemy.RegenerateStamina(_enemy.maxStamina/2);
         _regenerating = false;
     }
 
     public void CheckEnemies()
     {
-        Physics.OverlapBoxNonAlloc(transform.position, _archerDistance, _fellowEnemies, Quaternion.identity, 512);
+        int total = Physics.OverlapBoxNonAlloc(transform.position, _archerDistance, _fellowEnemies, Quaternion.identity, 512);
 
-        foreach (var enemy in _fellowEnemies)
+        for (int i = 0; i < total; i++)
         {
-            if (enemy.CompareTag("Enemy"))
+            if (_fellowEnemies[i].CompareTag("Enemy"))
             {
-                if (enemy != _enemy)
+                if (_fellowEnemies[i].gameObject != gameObject)
                 {
                     int temp = Random.Range(0, 2);
                     if (temp == 0)
