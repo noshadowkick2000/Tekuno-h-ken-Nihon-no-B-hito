@@ -26,37 +26,37 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Input/SwordInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Anchor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V2/TimingMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Input/MoveInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V2/TimingMachineEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierPhysicsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/SpriteLookAt.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/CameraTemp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V2/InputMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/AnimationMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V2/EnemyMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/HitHolder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/Utilities/BezierRailWalker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/BezierSpline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Materials/Shader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Temp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/V3/Anchor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/InputHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierPhysicsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/SpriteLookAt.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/Utilities/BezierRailWalker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/ShadowCaster.cs" />
-        <option value="$PROJECT_DIR$/Assets/StateDenoter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" />
-        <option value="$PROJECT_DIR$/Assets/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/PlayerInputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/StateDenoter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LevelArch/Player/DebugDisplay.cs" />
@@ -88,7 +88,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Boolean.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Anchor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/HitHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/InputHandler.cs" />
@@ -100,10 +99,15 @@
         <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/Utilities/BezierRailWalker.cs" />
         <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/SpriteLookAt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/CameraTemp.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/SwordInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V2/TimingMachineEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V2/TimingMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V2/InputMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V2/EnemyMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/SwordInput.cs" />
       </list>
     </option>
   </component>
@@ -260,6 +264,8 @@
       <workItem from="1585306433651" duration="5723000" />
       <workItem from="1585334238193" duration="3845000" />
       <workItem from="1585496239435" duration="6555000" />
+      <workItem from="1585507323660" duration="979000" />
+      <workItem from="1585508330611" duration="122000" />
     </task>
     <servers />
   </component>

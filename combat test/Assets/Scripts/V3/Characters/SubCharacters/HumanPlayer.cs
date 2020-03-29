@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Windows.WebCam;
 using Debug = System.Diagnostics.Debug;
@@ -59,6 +60,13 @@ public class HumanPlayer : Character
         UniversalInput();
         
         RegenerateStamina(10);
+        
+        //temp
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
     }
     
     public void SetFree()

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Resources;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SwordInput : MonoBehaviour
 {
@@ -30,7 +26,7 @@ public class SwordInput : MonoBehaviour
         Vector2 direction = new Vector2(x, y);
         float angle;
 
-        if (direction.magnitude > .4)
+        if (direction.magnitude > .5)
         {
             if (x < 0)
                 angle = 360 - Vector2.Angle(Vector2.up, direction);

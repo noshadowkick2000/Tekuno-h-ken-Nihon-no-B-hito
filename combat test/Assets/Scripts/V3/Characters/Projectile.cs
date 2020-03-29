@@ -53,6 +53,10 @@ public class Projectile : MonoBehaviour
             other.gameObject.GetComponent<Enemy>().GetHit(transform.position.y, damage);
             Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            //do nothing
+        }
         else
         {
             Destroy(gameObject);

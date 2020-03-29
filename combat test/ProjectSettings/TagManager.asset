@@ -8,6 +8,7 @@ TagManager:
   - ArcherAnchor
   - HealthBar
   - StaminaBar
+  - Dead
   layers:
   - Default
   - TransparentFX
