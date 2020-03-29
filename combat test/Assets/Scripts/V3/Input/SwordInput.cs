@@ -26,7 +26,7 @@ public class SwordInput : MonoBehaviour
         Vector2 direction = new Vector2(x, y);
         float angle;
 
-        if (direction.magnitude > .5)
+        if (direction.magnitude > .8)
         {
             if (x < 0)
                 angle = 360 - Vector2.Angle(Vector2.up, direction);

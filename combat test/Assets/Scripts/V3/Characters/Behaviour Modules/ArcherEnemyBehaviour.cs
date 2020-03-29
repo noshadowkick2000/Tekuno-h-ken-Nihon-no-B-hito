@@ -31,7 +31,7 @@ public class ArcherEnemyBehaviour : MonoBehaviour
     private Vector3 _parentOffset;
     private Vector3 _archerDistance;
 
-    private Collider[] _fellowEnemies = new Collider[2];
+    private Collider[] _fellowEnemies = new Collider[3];
 
     // Start is called before the first frame update
     void Start()
@@ -179,12 +179,15 @@ public class ArcherEnemyBehaviour : MonoBehaviour
         {
             if (enemy.CompareTag("Enemy"))
             {
-                int temp = Random.Range(0, 2);
-                if (temp == 0)
-                    _enemy.animator.SetTrigger("goaround");
-                else
-                    _enemy.animator.SetTrigger("retreat");
-                break;
+                if (enemy != _enemy)
+                {
+                    int temp = Random.Range(0, 2);
+                    if (temp == 0)
+                        _enemy.animator.SetTrigger("goaround");
+                    else
+                        _enemy.animator.SetTrigger("retreat");
+                    break;
+                }
             }
         }
     }

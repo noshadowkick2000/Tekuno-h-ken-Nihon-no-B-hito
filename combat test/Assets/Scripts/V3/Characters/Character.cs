@@ -92,8 +92,11 @@ public class Character : MonoBehaviour
     {
         curStamina -= amount;
         if (curStamina < 0)
+        {
+            Wound(((-curStamina)/maxStamina) * maxHealth);
             curStamina = 0;
-        
+        }
+
         UpdateStaminaBar();
     }
 
