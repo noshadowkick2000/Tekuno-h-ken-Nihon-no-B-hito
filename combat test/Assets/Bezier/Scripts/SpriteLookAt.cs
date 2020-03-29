@@ -14,6 +14,7 @@ public class SpriteLookAt : MonoBehaviour
     if (mainCamera.transform.hasChanged)
     {
       transform.LookAt(mainCamera.transform);
+      transform.rotation *= Quaternion.Euler(0, 180, 0);
     }
   }
 }

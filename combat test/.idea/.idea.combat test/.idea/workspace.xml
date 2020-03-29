@@ -53,8 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/ColliderAdder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/ShadowCaster.cs" />
         <option value="$PROJECT_DIR$/Assets/StateDenoter.cs" />
         <option value="$PROJECT_DIR$/Assets/Materials/ShadowCaster.cs" />
@@ -92,7 +90,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Anchor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/HitHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/CameraTemp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/BezierPhysicsController.cs" />
@@ -100,10 +97,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/MoveInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Additional Modules/AnimationMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/BezierSpline.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/BezierSolution/Utilities/BezierRailWalker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bezier/Scripts/SpriteLookAt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/CameraTemp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/HumanPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Input/SwordInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/SubCharacters/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/V3/Characters/Behaviour Modules/ArcherEnemyBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -136,10 +136,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="14768">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="19780">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14768" />
+      <option name="pid" value="19780" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -259,6 +259,7 @@
       <workItem from="1585236259084" duration="3016000" />
       <workItem from="1585306433651" duration="5723000" />
       <workItem from="1585334238193" duration="3845000" />
+      <workItem from="1585496239435" duration="6555000" />
     </task>
     <servers />
   </component>

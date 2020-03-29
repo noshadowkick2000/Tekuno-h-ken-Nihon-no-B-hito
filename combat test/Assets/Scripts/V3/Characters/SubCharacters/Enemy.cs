@@ -78,7 +78,6 @@ public class Enemy : Character
 
         if (Physics.Raycast(myPos, playerDirection, out lineOfSight, maxSightDistance))
         {
-            print(lineOfSight.transform.name);
             if (lineOfSight.transform.CompareTag("Player"))
                 playerInSight = true;
         }

@@ -88,7 +88,7 @@ public class HumanPlayer : Character
         _canLeftStick = false;
         //temp
         _moveInput.active = false;
-        _canRightStick = false;
+        //_canRightStick = false;
         
         if (attack == AttackType.LD || attack == AttackType.LU)
             SetDefense(attack);
@@ -262,7 +262,7 @@ public class HumanPlayer : Character
 
     public void Hit(AttackType attack) //corresponds with number in list of HitHolders
     {
-        _canRightStick = true;
+        //_canRightStick = true;
 
         curDebugHit = (int) attack;
         
@@ -314,7 +314,7 @@ public class HumanPlayer : Character
         {
             if (_defendingHigh)
             {
-                _defendingHigh = false;
+                //_defendingHigh = false;
                 animator.SetTrigger("ParryUp");
                 
                 if (isFacingForward)
@@ -340,7 +340,7 @@ public class HumanPlayer : Character
         {
             if (_defendingLow)
             {
-                _defendingLow = false;
+                //_defendingLow = false;
                 animator.SetTrigger("ParryDown");
                 
                 if (isFacingForward)

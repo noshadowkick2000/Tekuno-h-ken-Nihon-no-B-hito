@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  speed: 0.65
+  speed: 0.6
   dieTime: 10
 --- !u!65 &2789200362648637831
 BoxCollider:

@@ -29,6 +29,9 @@ public class ArcherEnemyBehaviour : MonoBehaviour
 
     private BezierRailWalker _bezierRailWalker;
     private Vector3 _parentOffset;
+    private Vector3 _archerDistance;
+
+    private Collider[] _fellowEnemies = new Collider[2];
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,7 @@ public class ArcherEnemyBehaviour : MonoBehaviour
         _enemy = GetComponent<Enemy>();
         _bezierRailWalker = GetComponentInParent<BezierRailWalker>();
         _parentOffset = transform.localPosition;
+        _archerDistance = new Vector3(engagedRange / 2, engagedRange / 2, engagedRange / 2);
     }
 
     // Update is called once per frame
@@ -162,8 +166,26 @@ public class ArcherEnemyBehaviour : MonoBehaviour
 
     private IEnumerator Restamina()
     {
-        yield return new WaitForSeconds(2);
-        _enemy.RegenerateStamina(_enemy.maxStamina/4);
+        yield return new WaitForSeconds(1);
+        _enemy.RegenerateStamina(_enemy.maxStamina/5);
         _regenerating = false;
+    }
+
+    public void CheckEnemies()
+    {
+        Physics.OverlapBoxNonAlloc(transform.position, _archerDistance, _fellowEnemies, Quaternion.identity, 512);
+
+        foreach (var enemy in _fellowEnemies)
+        {
+            if (enemy.CompareTag("Enemy"))
+            {
+                int temp = Random.Range(0, 2);
+                if (temp == 0)
+                    _enemy.animator.SetTrigger("goaround");
+                else
+                    _enemy.animator.SetTrigger("retreat");
+                break;
+            }
+        }
     }
 }
