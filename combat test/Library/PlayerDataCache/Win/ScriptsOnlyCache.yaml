@@ -57,11 +57,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -712,7 +709,7 @@ ScriptsOnlyBuild:
     className: BezierWalkerLocomotion
   - hash:
       serializedVersion: 2
-      Hash: 0782ab7a8b9583f0bedada391a0363e5
+      Hash: fdb9d65d1ef94dd013313934a3412fcb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Anchor

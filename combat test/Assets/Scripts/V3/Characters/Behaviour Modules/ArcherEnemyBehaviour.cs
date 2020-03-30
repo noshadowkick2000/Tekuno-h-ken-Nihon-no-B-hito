@@ -82,8 +82,8 @@ public class ArcherEnemyBehaviour : MonoBehaviour
 
     void MoveTree()
     {
-        Anchor temp = Anchor.FindRandomAnchor("ArcherAnchor", transform.position, treeRange);
-        _curGoalPosition = temp.transform.position;
+        Anchor temp = Anchor.FindFurthestAnchor("ArcherAnchor", transform.position, treeRange);
+        _curGoalPosition = temp.location;
         _enemy.animator.SetTrigger("movetree");
         _moving = true;
         GetComponent<CapsuleCollider>().enabled = false;
